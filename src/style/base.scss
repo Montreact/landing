@@ -1,0 +1,16 @@
+// Resets
+@import './reset.scss';
+
+// Vendors
+// @import '~@fortawesome/fontawesome-free/css/all.css';
+
+// Variables, utils & mixins
+@import './mixins.scss';
+@import './breakpoints.scss';
+@import './colors.scss';
+@import './utils.scss';
+
+// Components
+@import './main.scss';
+
+@import 'animated.scss';

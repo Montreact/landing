@@ -1,0 +1,17 @@
+{
+  "app.containers.HomePage.WhatWeDoText": "Nous créons des interfaces complexes et réactives de manière simple avec des interactions cohérentes et de haute qualité. Nous sommes ici pour vous aider à prendre des décisions concernant les éléments restants de la technologie Web requis en fonction de vos besoins, de votre équipe et de vos objectifs.",
+  "app.containers.HomePage.WhatWeDoTextExperts": "Nous sommes les experts JavaScript.",
+  "app.containers.HomePage.WhatWeDoTextHappy": "Si vous n'êtes pas heureux, nous ne le sommes pas.",
+  "app.containers.HomePage.WhatWeDoTitle": "Nous donnons vie aux applications en utilisant React",
+  "app.containers.HomePage.WhoAreWeText": "Montreact est la meilleure entreprise de développement front end de Montréal qui se spécialise dans React.js, le framework Javascript le plus puissant du Web. Nous travaillons localement à Montréal et dans le monde entier pour aider les startups et les entreprises à développer leur applications web avec qualité.",
+  "app.containers.HomePage.WhoAreWeTitle": "Qui sommes nous?",
+  "app.containers.HomePage.catchPhrase": "Développement React de MTL",
+  "app.containers.HomePage.letsTalk": "Contactez-nous",
+  "app.containers.NotFoundPage.header": "Ceci est le conteneur NotFoundPage!",
+  "app.containers.HomePage.Expertise": "Nos domaines d'expertise:",
+  "app.containers.HomePage.Coffee": "Prenons un café ou une bière et donnons vie à ces idées.",
+  "app.containers.HomePage.contactUs": "Contactez-nous",
+  "app.containers.HomePage.Portfolio": "Notro portfolio",
+  "app.containers.HomePage.WebAndMobileApps": "Applications web et mobile",
+  "app.containers.HomePage.BusinessLandingPage": "Page de destination"
+}
