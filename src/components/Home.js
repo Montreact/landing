@@ -22,17 +22,21 @@ import pic09 from '../images/apps/pic09.jpg';
 import pic15 from '../images/apps/pic15.jpg';
 import pic16 from '../images/apps/pic16.jpg';
 import pic17 from '../images/apps/pic17.jpg';
+import en from '../translations/en.json';
+import fr from '../translations/fr.json';
 
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
-	this.state = {
-		locale: "en",
-	};
+    this.state = {
+      locale: en,
+      culture: 'en'
+    };
   }
 
   onLocaleToggle = locale => {
-	this.setState({ locale: locale })
+    if (locale == 'en') this.setState({ locale: en, culture: 'en'  })
+    else if (locale == 'fr') this.setState({ locale: fr, culture: 'fr' })
   };
 
   handleScrollDown = () => {
@@ -44,8 +48,9 @@ class HomePage extends React.Component {
   };
 
   render() {
-    const { language } = this.props;
-    const localeToggle = this.state.locale === 'en' ? 'fr' : 'en';
+    const localeToggle = this.state.culture === 'en' ? 'fr' : 'en';
+    const locale = this.state.locale;
+
     return (
       <React.Fragment>
         <div className="landing section section-full">
@@ -75,7 +80,7 @@ class HomePage extends React.Component {
             <img alt="logo-title" className="logo-title" src={LogoTitle} />
 
             <h1 className="catch-phrase">
-              {/* <FormattedMessage {...messages.catchPhrase} /> */}
+              {locale.catchPhrase}
             </h1>
 
             <a
@@ -84,7 +89,7 @@ class HomePage extends React.Component {
               role="button"
             >
               <button type="submit">
-                {/* <FormattedMessage {...messages.letsTalk} /> */}
+                {locale.letsTalk}
               </button>
             </a>
           </span>
@@ -102,28 +107,28 @@ class HomePage extends React.Component {
         <div ref={this.about} className="description section section-full">
           <div className="description-right">
             <h1>
-              {/* <FormattedMessage {...messages.WhoAreWeTitle} /> */}
+              {locale.WhoAreWeTitle}
             </h1>
 
             <p>
-              {/* <FormattedMessage {...messages.WhoAreWeText} /> */}
+              {locale.WhoAreWeText}
             </p>
           </div>
 
           <div className="description-left">
             <h1>
-              {/* <FormattedMessage {...messages.WhatWeDoTitle} /> */}
+              {locale.WhatWeDoTitle}
             </h1>
 
             <p>
-              {/* <FormattedMessage {...messages.WhatWeDoText} /> */}
+              {locale.WhatWeDoText}
             </p>
           </div>
         </div>
 
         <div className="toolbox section">
           <h1>
-            {/* <FormattedMessage {...messages.Expertise} /> */}
+            {locale.Expertise}
           </h1>
 
           <ul>
@@ -162,7 +167,7 @@ class HomePage extends React.Component {
 
         <div className="portfolio section">
           <h1>
-            {/* <FormattedMessage {...messages.Portfolio} /> */}
+            {locale.Portfolio}
           </h1>
 
           <div className="apps">
@@ -233,14 +238,14 @@ class HomePage extends React.Component {
 
         <div className="coffee">
           <AnimatedCoffee />
-          {/* <FormattedMessage {...messages.Coffee} /> */}
+          {locale.Coffee}
           <a
             className="contact-us"
             href="mailto:montreact@gmail.com"
             role="button"
           >
             <button type="submit">
-              {/* <FormattedMessage {...messages.contactUs} /> */}
+              {locale.contactUs}
             </button>
           </a>
         </div>
