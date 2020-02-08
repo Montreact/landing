@@ -3,10 +3,8 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import "./style/base.scss";
 import Home from "./components/Home";
 
-import { Auth0Context } from './contexts/auth0-context'; 
 
 function App() {
-  const auth0 = useContext(Auth0Context); 
   return (
     <BrowserRouter>
       <Switch>

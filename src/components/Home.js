@@ -25,18 +25,24 @@ import pic17 from '../images/apps/pic17.jpg';
 import en from '../translations/en.json';
 import fr from '../translations/fr.json';
 
+import i18n from "i18next";
+
+import { withTranslation } from 'react-i18next';
+
+
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      locale: en,
+      locale: null,
       culture: 'en'
     };
   }
 
   onLocaleToggle = locale => {
-    if (locale == 'en') this.setState({ locale: en, culture: 'en'  })
-    else if (locale == 'fr') this.setState({ locale: fr, culture: 'fr' })
+    i18n.changeLanguage(locale);
+    // if (locale == 'en') this.setState({ locale: en, culture: 'en'  })
+    // else if (locale == 'fr') this.setState({ locale: fr, culture: 'fr' })
   };
 
   handleScrollDown = () => {
@@ -51,6 +57,9 @@ class HomePage extends React.Component {
     const localeToggle = this.state.culture === 'en' ? 'fr' : 'en';
     const locale = this.state.locale;
 
+    const t = this.props.t;
+    console.log(i18n);
+    
     return (
       <React.Fragment>
         <div className="landing section section-full">
@@ -80,7 +89,7 @@ class HomePage extends React.Component {
             <img alt="logo-title" className="logo-title" src={LogoTitle} />
 
             <h1 className="catch-phrase">
-              {locale.catchPhrase}
+              {t('catchPhrase')}
             </h1>
 
             <a
@@ -89,7 +98,7 @@ class HomePage extends React.Component {
               role="button"
             >
               <button type="submit">
-                {locale.letsTalk}
+                {t('letsTalk')}
               </button>
             </a>
           </span>
@@ -107,28 +116,28 @@ class HomePage extends React.Component {
         <div ref={this.about} className="description section section-full">
           <div className="description-right">
             <h1>
-              {locale.WhoAreWeTitle}
+              {t('WhoAreWeTitle')}
             </h1>
 
             <p>
-              {locale.WhoAreWeText}
+              {t('WhoAreWeText')}
             </p>
           </div>
 
           <div className="description-left">
             <h1>
-              {locale.WhatWeDoTitle}
+              {t('WhatWeDoTitle')}
             </h1>
 
             <p>
-              {locale.WhatWeDoText}
+              {t('WhatWeDoText')}
             </p>
           </div>
         </div>
 
         <div className="toolbox section">
           <h1>
-            {locale.Expertise}
+            {t('Expertise')}
           </h1>
 
           <ul>
@@ -167,7 +176,7 @@ class HomePage extends React.Component {
 
         <div className="portfolio section">
           <h1>
-            {locale.Portfolio}
+            {t('Portfolio')}
           </h1>
 
           <div className="apps">
@@ -238,14 +247,14 @@ class HomePage extends React.Component {
 
         <div className="coffee">
           <AnimatedCoffee />
-          {locale.Coffee}
+          {t('Coffee')}
           <a
             className="contact-us"
             href="mailto:montreact@gmail.com"
             role="button"
           >
             <button type="submit">
-              {locale.contactUs}
+              {t('contactUs')}
             </button>
           </a>
         </div>
@@ -293,4 +302,5 @@ class AnimatedCoffee extends React.Component {
   }
 }
 
-export default HomePage;
+export default withTranslation()(HomePage);
+
