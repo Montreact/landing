@@ -346,6 +346,7 @@ body {
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
+		overflow-wrap: break-word;
 
 		h1, p {
 			transition: .5s all cubic-bezier(0.19, 1, 0.22, 1);
