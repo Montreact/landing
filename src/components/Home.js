@@ -185,8 +185,8 @@ class HomePage extends React.Component {
                   <img src={pic17} alt="" />
                 </a>
               </Tippy>
-              <Tippy content="De Carinni - Alex Viapiano" animation="fade" arrow >
-                <a href="https://alexviapiano.github.io/DeCarrini/" target="_blank" className="app">
+              <Tippy content="LUVI - Alex Viapiano" animation="fade" arrow >
+                <a href="www.luvi.ca" target="_blank" className="app">
                   <img src={pic05} alt="" />
                 </a>
               </Tippy>
