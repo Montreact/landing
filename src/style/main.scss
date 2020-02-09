@@ -9,7 +9,11 @@ $brand-3: #FFF;
 
 $bg-color: #000;
 
+ol, ul {
+	list-style: none; }
+
 body {
+	margin: 0px;
 	position: relative;
 	background-color: $bg-color;
 	background-image: url('../images/bg.jpg');
@@ -36,7 +40,7 @@ body {
 	.section {
 		min-height: 70vh;
 		padding: 80px;
-		@include for-phone-only {
+		@media (max-width: 599px) {
 			padding: 40px 20px 40px 20px;
 		}
 	}
@@ -165,7 +169,7 @@ body {
 			transition: .3s all;
 			margin-top: -25px;
 
-			@include for-phone-only {
+			@media (max-width: 599px) {
 				margin-top: -20px;
 				font-size: 16px;
 			}
@@ -272,7 +276,7 @@ body {
 		}
 		
 		
-		@include for-tablet-portrait-up {
+		@media (min-width: 600px) {
 			p, li, a {
 				font-size: 20px;
 			}
@@ -363,7 +367,7 @@ body {
         	}
 		}
 		
-		@include for-phone-only {
+		@media (max-width: 599px) {
 			.tool {
 				img {
 					max-width: 100px;
@@ -436,7 +440,7 @@ body {
 					border: none;
 					max-height: 150px;
 				}
-				@include for-phone-only {
+				@media (max-width: 599px) {
 					max-width: 150px !important;
 					img {
 						max-width: 150px !important;
