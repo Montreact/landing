@@ -3,6 +3,12 @@
 $font-1: "Pacifico";
 $font-2: "Muli";
 
+$brand-1: #3414be;
+$brand-2: #7158dc;
+$brand-3: #FFF;
+
+$bg-color: #000;
+
 body {
 	position: relative;
 	background-color: $bg-color;
@@ -36,11 +42,13 @@ body {
 	}
 
 	.section-full {
-		min-height: 100vh;
+		min-height: 85vh;
 	}
 	
 	.section.landing {
-		@include flex-center();
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		flex-direction: column;
 		text-align: center;
 		position: relative;
@@ -132,167 +140,6 @@ body {
 				-webkit-animation-iteration-count: 1 !important;
 				animation-iteration-count: 1 !important;
 			}
-		}
-
-		@-webkit-keyframes fadeInUp {
-			from {
-			  opacity: 0;
-			  -webkit-transform: translate3d(0, 100%, 0);
-			  transform: translate3d(0, 100%, 0);
-			}
-		  
-			to {
-			  opacity: 1;
-			  -webkit-transform: translate3d(0, 0, 0);
-			  transform: translate3d(0, 0, 0);
-			}
-		}
-		  
-		@keyframes fadeInUp {
-			from {
-			  opacity: 0;
-			  -webkit-transform: translate3d(0, 100%, 0);
-			  transform: translate3d(0, 100%, 0);
-			}
-		  
-			to {
-			  opacity: 1;
-			  -webkit-transform: translate3d(0, 0, 0);
-			  transform: translate3d(0, 0, 0);
-			}
-		}
-		  
-		.fade-in-up {
-			-webkit-animation-name: fadeInUp;
-			animation-name: fadeInUp;
-		}
-
-		@-webkit-keyframes fadeInUp {
-			from {
-			  opacity: 0;
-			}
-		  
-			to {
-			  opacity: 1;
-			}
-		}
-		  
-		@keyframes fadeIn {
-			from {
-			  opacity: 0;
-			}
-		  
-			to {
-			  opacity: 1;
-			}
-		}
-
-		@-webkit-keyframes jello {
-			from,
-			11.1%,
-			to {
-			  -webkit-transform: translate3d(0, 0, 0);
-			  transform: translate3d(0, 0, 0);
-			}
-		  
-			22.2% {
-			  -webkit-transform: skewX(-12.5deg) skewY(-12.5deg);
-			  transform: skewX(-12.5deg) skewY(-12.5deg);
-			}
-		  
-			33.3% {
-			  -webkit-transform: skewX(6.25deg) skewY(6.25deg);
-			  transform: skewX(6.25deg) skewY(6.25deg);
-			}
-		  
-			44.4% {
-			  -webkit-transform: skewX(-3.125deg) skewY(-3.125deg);
-			  transform: skewX(-3.125deg) skewY(-3.125deg);
-			}
-		  
-			55.5% {
-			  -webkit-transform: skewX(1.5625deg) skewY(1.5625deg);
-			  transform: skewX(1.5625deg) skewY(1.5625deg);
-			}
-		  
-			66.6% {
-			  -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
-			  transform: skewX(-0.78125deg) skewY(-0.78125deg);
-			}
-		  
-			77.7% {
-			  -webkit-transform: skewX(0.390625deg) skewY(0.390625deg);
-			  transform: skewX(0.390625deg) skewY(0.390625deg);
-			}
-		  
-			88.8% {
-			  -webkit-transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
-			  transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
-			}
-		}
-		  
-		@keyframes jello {
-			from,
-			11.1%,
-			to {
-			  -webkit-transform: translate3d(0, 0, 0);
-			  transform: translate3d(0, 0, 0);
-			}
-		  
-			22.2% {
-			  -webkit-transform: skewX(-3.5deg) skewY(-3.5deg);
-			  transform: skewX(-3.5deg) skewY(-3.5deg);
-			}
-		  
-			33.3% {
-			  -webkit-transform: skewX(3.25deg) skewY(3.25deg);
-			  transform: skewX(3.25deg) skewY(3.25deg);
-			}
-		  
-			44.4% {
-			  -webkit-transform: skewX(-2deg) skewY(-2deg);
-			  transform: skewX(-2deg) skewY(-2deg);
-			}
-		  
-			55.5% {
-			  -webkit-transform: skewX(.5deg) skewY(.5deg);
-			  transform: skewX(.5deg) skewY(.5deg);
-			}
-		  
-			66.6% {
-			  -webkit-transform: skewX(-0.4deg) skewY(-0.4deg);
-			  transform: skewX(-0.4deg) skewY(-0.4deg);
-			}
-		  
-			77.7% {
-			  -webkit-transform: skewX(0.2deg) skewY(0.2deg);
-			  transform: skewX(0.2deg) skewY(0.2deg);
-			}
-		  
-			88.8% {
-			  -webkit-transform: skewX(-0.1deg) skewY(-0.1deg);
-			  transform: skewX(-0.1deg) skewY(-0.1deg);
-			}
-		}
-		  
-		.jello:hover {
-			-webkit-animation-name: jello;
-			animation-name: jello;
-			-webkit-transform-origin: center;
-			transform-origin: center;
-			-webkit-animation-duration: .8s;
-			animation-duration: .8s;
-		}
-		  
-		.fade-in {
-			-webkit-animation-name: fadeIn;
-			animation-name: fadeIn;
-			-webkit-animation-duration: .5s;
-			animation-duration: .5s;
-			-webkit-animation-fill-mode: both;
-			animation-fill-mode: both;
-			-webkit-animation-delay: .7s;
-			animation-delay: .7s;
 		}
 		  
 		.down-arrow {
@@ -574,11 +421,11 @@ body {
 				display: flex;
 				justify-content: center;	
 				align-items: center;	
-				filter: grayscale(1.0);
+				// filter: grayscale(0.3) sepia(0.2);
 				&:hover {
 					transform: scale(1.05);
 					border-radius: 15px;
-					filter: none;
+					// filter: none;
 				}
 				img {
 					max-width: 200px;

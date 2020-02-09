@@ -33,19 +33,16 @@ import { withTranslation } from 'react-i18next';
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      locale: null,
-      culture: 'en'
-    };
+    this.state = {};
+    this.about = React.createRef()  
   }
 
   onLocaleToggle = locale => {
     i18n.changeLanguage(locale);
-    // if (locale == 'en') this.setState({ locale: en, culture: 'en'  })
-    // else if (locale == 'fr') this.setState({ locale: fr, culture: 'fr' })
   };
 
   handleScrollDown = () => {
+    console.log(this)
     window.scrollTo({
       left: 0,
       top: this.about.current.offsetTop,
@@ -54,12 +51,8 @@ class HomePage extends React.Component {
   };
 
   render() {
-    const localeToggle = this.state.culture === 'en' ? 'fr' : 'en';
-    const locale = this.state.locale;
-
-    const t = this.props.t;
-    console.log(i18n);
-    
+    const localeToggle = i18n.language === 'en' ? 'fr' : 'en';
+    const t = this.props.t;    
     return (
       <React.Fragment>
         <div className="landing section section-full">
@@ -72,74 +65,40 @@ class HomePage extends React.Component {
             {localeToggle}
           </button>
 
-          <span className="logo-container jello">
-            <img
-              alt="logo-half"
-              className="logo-half fade-in-up"
-              src={LogoLeft}
-            />
-            <img
-              alt="logo-half"
-              className="logo-half fade-in-up"
-              src={LogoRight}
-            />
+          <span className="logo-container animated jello delay-5s ">
+            <img alt="logo-half" className="logo-half fade-in-up" src={LogoLeft} />
+            <img alt="logo-half" className="logo-half fade-in-up" src={LogoRight} />
           </span>
 
           <span className="fade-in">
             <img alt="logo-title" className="logo-title" src={LogoTitle} />
 
-            <h1 className="catch-phrase">
-              {t('catchPhrase')}
-            </h1>
+            <h1 className="catch-phrase">{t('catchPhrase')}</h1>
 
-            <a
-              className="contact-us"
-              href="mailto:montreact@gmail.com"
-              role="button"
-            >
-              <button type="submit">
-                {t('letsTalk')}
-              </button>
+            <a className="contact-us" href="mailto:montreact@gmail.com" role="button">
+              <button type="submit">{t('letsTalk')}</button>
             </a>
           </span>
 
-          <button
-            type="submit"
-            className="down-arrow"
-            onClick={() => this.handleScrollDown()}
-            onKeyDown={() => this.handleScrollDown()}
-          >
+          <button type="submit" className="down-arrow" onClick={() => this.handleScrollDown()} onKeyDown={() => this.handleScrollDown()}>
             <img alt="down-arrow" width="30" src={DownArrow} />
           </button>
         </div>
 
         <div ref={this.about} className="description section section-full">
           <div className="description-right">
-            <h1>
-              {t('WhoAreWeTitle')}
-            </h1>
-
-            <p>
-              {t('WhoAreWeText')}
-            </p>
+            <h1>{t('WhoAreWeTitle')}</h1>
+            <p>{t('WhoAreWeText')}</p>
           </div>
 
           <div className="description-left">
-            <h1>
-              {t('WhatWeDoTitle')}
-            </h1>
-
-            <p>
-              {t('WhatWeDoText')}
-            </p>
+            <h1>{t('WhatWeDoTitle')}</h1>
+            <p>{t('WhatWeDoText')}</p>
           </div>
         </div>
 
         <div className="toolbox section">
-          <h1>
-            {t('Expertise')}
-          </h1>
-
+          <h1>{t('Expertise')}</h1>
           <ul>
             <li className="tool">
               <a target="_blank" href="https://reactjs.org/">
@@ -231,8 +190,8 @@ class HomePage extends React.Component {
                   <img src={pic05} alt="" />
                 </a>
               </Tippy>
-              <Tippy content="Bastone and Associates - Alex Viapiano" animation="fade" arrow >
-                <a href="https://alexviapiano.github.io/BastoneAndAssociates/" target="_blank" className="app">
+              <Tippy content="The Green Room - Alex Viapiano" animation="fade" arrow >
+                <a href="www.greenroomchannel.com" target="_blank" className="app">
                   <img src={pic03} alt="" />
                 </a>
               </Tippy>
@@ -248,14 +207,8 @@ class HomePage extends React.Component {
         <div className="coffee">
           <AnimatedCoffee />
           {t('Coffee')}
-          <a
-            className="contact-us"
-            href="mailto:montreact@gmail.com"
-            role="button"
-          >
-            <button type="submit">
-              {t('contactUs')}
-            </button>
+          <a className="contact-us" href="mailto:montreact@gmail.com" role="button">
+            <button type="submit">{t('contactUs')}</button>
           </a>
         </div>
       </React.Fragment>
