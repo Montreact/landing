@@ -1,10 +1,14 @@
 import React from 'react';
 import Tippy from '@tippy.js/react';
 import 'tippy.js/dist/tippy.css';
+import i18n from "i18next";
+import { withTranslation } from 'react-i18next';
+
 import LogoLeft from '../images/logo-left.png';
 import LogoRight from '../images/logo-right.png';
 import LogoTitle from '../images/logo_title.png';
-import DownArrow from '../images/down-arrow.svg';
+import home1 from '../images/home1.jpg';
+import home2 from '../images/home2.jpg';
 import ToolBoxLogoReact from '../images/toolbox/react_solo.png';
 import ToolBoxLogoReactNative from '../images/toolbox/react-native.png';
 import ToolBoxLogoRedux from '../images/toolbox/redux_solo.png';
@@ -16,40 +20,18 @@ import pic03 from '../images/apps/pic03.jpg';
 import pic04 from '../images/apps/pic04.jpg';
 import pic05 from '../images/apps/pic05.jpg';
 import pic06 from '../images/apps/pic06.jpg';
-import pic07 from '../images/apps/pic07.png';
-import pic08 from '../images/apps/pic08.png';
+import pic07 from '../images/apps/pic07.jpg';
+import pic08 from '../images/apps/pic08.jpg';
 import pic09 from '../images/apps/pic09.jpg';
 import pic10 from '../images/apps/pic15.jpg';
 import pic11 from '../images/apps/pic16.jpg';
 import pic12 from '../images/apps/pic17.jpg';
-import home1 from '../images/home1.jpg';
-import home2 from '../images/home2.jpg';
-import en from '../translations/en.json';
-import fr from '../translations/fr.json';
-
-import i18n from "i18next";
-
-import { withTranslation } from 'react-i18next';
-
 
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.about = React.createRef()  
   }
-
-  onLocaleToggle = locale => {
-    i18n.changeLanguage(locale);
-  };
-
-  handleScrollDown = () => {
-    window.scrollTo({
-      left: 0,
-      top: this.about.current.offsetTop,
-      behavior: 'smooth',
-    });
-  };
 
   render() {
     const localeToggle = i18n.language === 'en' ? 'fr' : 'en';
@@ -57,18 +39,6 @@ class HomePage extends React.Component {
     
     return (
 			<div id="page-wrapper">
-
-				{/* <!-- Header --> */}
-					<header id="header" className="alt">
-						<h1><a href="index.html">Solid State</a></h1>
-						<nav>
-							<a href="/old">Old Site</a>
-              <a 
-                onClick={() => this.onLocaleToggle(localeToggle)}
-                onKeyDown={() => this.onLocaleToggle(localeToggle)}>
-              {localeToggle}</a>
-						</nav>
-					</header>
 
 				{/* <!-- Banner --> */}
 					<section id="banner">
@@ -94,7 +64,7 @@ class HomePage extends React.Component {
 									<a href="#" className="image"><img src={home1} alt="" /></a>
 									<div className="content">
 										<h2 className="major">{t('WhoAreWeTitle')}</h2>
-										<p className="major-description">{t('WhoAreWeText')}</p>
+										<p>{t('WhoAreWeText')}</p>
 										{/* <a href="#" className="special">Learn more</a> */}
 									</div>
 								</div>
@@ -106,7 +76,7 @@ class HomePage extends React.Component {
 									<a href="#" className="image"><img src={home2} alt="" /></a>
 									<div className="content">
 										<h2 className="major">{t('WhatWeDoTitle')}</h2>
-										<p className="major-description">{t('WhatWeDoText')}</p>
+										<p>{t('WhatWeDoText')}</p>
 									</div>
 								</div>
 							</section>
@@ -171,17 +141,17 @@ class HomePage extends React.Component {
                 <div className="app-section">
                   <Tippy content="GOrendezvous (iOS) - Alex Viapiano" animation="fade" arrow followCursor={true}>
                     <a href="https://itunes.apple.com/ca/app/gorendezvous/id1353526648?mt=8" target="_blank" className="app">
-                      <img className="mobile-app" src={pic07} alt="" />
-                    </a>
-                  </Tippy>
-                  <Tippy content="GOrendezvous (Android) - Alex Viapiano" animation="fade" arrow followCursor>
-                    <a href="https://play.google.com/store/apps/details?id=com.gorendezvous.mobile" target="_blank" className="app">
-                      <img className="mobile-app" src={pic08} alt="" />
+                      <img src={pic07} alt="" />
                     </a>
                   </Tippy>
                   <Tippy content="Mix" animation="fade" arrow followCursor>
                     <a href="https://developer.cerence.com/#/login" target="_blank" className="app">
                       <img src={pic11} alt="" />
+                    </a>
+                  </Tippy>
+                  <Tippy content="LUVI - Alex Viapiano" animation="fade" arrow followCursor>
+                    <a href="https://www.luvi.ca" target="_blank" className="app">
+                      <img src={pic05} alt="" />
                     </a>
                   </Tippy>
                   <Tippy content="Nite Bite - Alex Viapiano" animation="fade" arrow followCursor>
@@ -204,24 +174,24 @@ class HomePage extends React.Component {
                       <img src={pic06} alt="" />
                     </a>
                   </Tippy>
-                  <Tippy content="Emtex - Alex Viapiano" animation="fade" arrow followCursor>
-                    <a href="http://www.emtex.ca/" target="_blank" className="app">
-                      <img src={pic04} alt="" />
-                    </a>
-                  </Tippy>
                   <Tippy content="A Plus - Alex Viapiano" animation="fade" arrow followCursor>
                     <a href="https://alexviapiano.github.io/Aplus/" target="_blank" className="app">
                       <img src={pic12} alt="" />
                     </a>
                   </Tippy>
                   <Tippy content="The Green Room - Alex Viapiano" animation="fade" arrow followCursor >
-                    <a href="www.greenroomchannel.com" target="_blank" className="app">
+                    <a href="https://www.greenroomchannel.com" target="_blank" className="app">
                       <img src={pic03} alt="" />
                     </a>
                   </Tippy>
-                  <Tippy content="LUVI - Alex Viapiano" animation="fade" arrow followCursor>
-                    <a href="www.luvi.ca" target="_blank" className="app">
-                      <img src={pic05} alt="" />
+                  <Tippy content="GOrendezvous (Android) - Alex Viapiano" animation="fade" arrow followCursor>
+                    <a href="https://play.google.com/store/apps/details?id=com.gorendezvous.mobile" target="_blank" className="app">
+                      <img src={pic08} alt="" />
+                    </a>
+                  </Tippy>
+                  <Tippy content="Emtex - Alex Viapiano" animation="fade" arrow followCursor>
+                    <a href="http://www.emtex.ca/" target="_blank" className="app">
+                      <img src={pic04} alt="" />
                     </a>
                   </Tippy>
                   <Tippy content="Condos Cite Avenir Laval - Alex Viapiano" animation="fade" arrow followCursor >

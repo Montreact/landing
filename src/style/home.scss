@@ -21,6 +21,7 @@ body {
 	background-attachment: fixed;
 	background-position: center;
 	color: #FFF;
+	word-wrap: break-word;
 
 	* {
 		font-family: $font-2;
@@ -211,10 +212,6 @@ body {
 	}
 }
 
-.major-description {
-	word-wrap: break-word;
-}
-
 .flat-bottom {
 	margin-bottom: 0px !important;
 	padding-bottom: 50px;
@@ -260,19 +257,13 @@ body {
 			justify-content: center;	
 			align-items: center;	
 			border: none;
-			// filter: grayscale(0.3) sepia(0.2);
 			&:hover {
 				transform: scale(1.05);
 				border-radius: 15px;
-				// filter: none;
 			}
 			img {
 				max-width: 150px;
 				border-radius: 35px;
-			}
-			.mobile-app {
-				border: none;
-				max-height: 150px;
 			}
 			@media (max-width: 599px) {
 				max-width: 150px !important;
