@@ -22,6 +22,8 @@ import pic09 from '../images/apps/pic09.jpg';
 import pic15 from '../images/apps/pic15.jpg';
 import pic16 from '../images/apps/pic16.jpg';
 import pic17 from '../images/apps/pic17.jpg';
+import home1 from '../images/home1.jpg';
+import home2 from '../images/home2.jpg';
 import en from '../translations/en.json';
 import fr from '../translations/fr.json';
 
@@ -42,7 +44,6 @@ class HomePage extends React.Component {
   };
 
   handleScrollDown = () => {
-    console.log(this)
     window.scrollTo({
       left: 0,
       top: this.about.current.offsetTop,
@@ -54,203 +55,151 @@ class HomePage extends React.Component {
     const localeToggle = i18n.language === 'en' ? 'fr' : 'en';
     const t = this.props.t;    
     return (
-      <React.Fragment>
-        <div className="landing section section-full">
-          <button
-            type="submit"
-            onClick={() => this.onLocaleToggle(localeToggle)}
-            onKeyDown={() => this.onLocaleToggle(localeToggle)}
-            className="lang-btn"
-          >
-            {localeToggle}
-          </button>
+			<div id="page-wrapper">
 
-          <span className="logo-container animated jello delay-5s ">
-            <img alt="logo-half" className="logo-half fade-in-up" src={LogoLeft} />
-            <img alt="logo-half" className="logo-half fade-in-up" src={LogoRight} />
-          </span>
+				{/* <!-- Header --> */}
+					<header id="header" class="alt">
+						<h1><a href="index.html">Solid State</a></h1>
+						<nav>
+							<a href="/old">Old Site</a>
+              <a 
+                onClick={() => this.onLocaleToggle(localeToggle)}
+                onKeyDown={() => this.onLocaleToggle(localeToggle)}>
+              {localeToggle}</a>
+						</nav>
+					</header>
 
-          <span className="fade-in">
-            <img alt="logo-title" className="logo-title" src={LogoTitle} />
+				{/* <!-- Banner --> */}
+					<section id="banner">
+						<div class="inner banner-container">
+              <span className="logo-container animated jello delay-5s ">
+                <img alt="logo-half" className="logo-half fade-in-up" src={LogoLeft} />
+                <img alt="logo-half" className="logo-half fade-in-up" src={LogoRight} />
+              </span>
 
-            <h1 className="catch-phrase">{t('catchPhrase')}</h1>
-
-            <a className="contact-us" href="mailto:montreact@gmail.com" role="button">
-              <button type="submit">{t('letsTalk')}</button>
-            </a>
-          </span>
-
-          <button type="submit" className="down-arrow" onClick={() => this.handleScrollDown()} onKeyDown={() => this.handleScrollDown()}>
-            <img alt="down-arrow" width="30" src={DownArrow} />
-          </button>
-        </div>
-
-        <div ref={this.about} className="description section section-full">
-          <div className="description-right">
-            <h1>{t('WhoAreWeTitle')}</h1>
-            <p>{t('WhoAreWeText')}</p>
-          </div>
-
-          <div className="description-left">
-            <h1>{t('WhatWeDoTitle')}</h1>
-            <p>{t('WhatWeDoText')}</p>
-          </div>
-        </div>
-
-        <div className="toolbox section">
-          <h1>{t('Expertise')}</h1>
-          <ul>
-            <li className="tool">
-              <a target="_blank" href="https://reactjs.org/">
-                <img alt="react-logo" width="160" src={ToolBoxLogoReact} />
-              </a>
-              <p>React</p>
-            </li>
-            <li className="tool">
-              <a target="_blank" href="https://facebook.github.io/react-native/">
-                <img alt="react-native-logo" width="160" src={ToolBoxLogoReactNative} />
-              </a>
-              <p>React Native</p>
-            </li>
-            <li className="tool">
-              <a target="_blank" href="https://redux.js.org/">
-                <img alt="redux-logo" width="160" src={ToolBoxLogoRedux} />
-              </a>
-              <p>Redux</p>
-            </li>
-            <li className="tool">
-              <a target="_blank" href="https://expo.io/">
-                <img alt="expo-io-logo" width="160" src={ToolBoxLogoExpoIO} />
-              </a>
-              <p>Expo</p>
-            </li>
-            <li className="tool">
-              <a target="_blank" href="https://sass-lang.com/">
-                <img alt="sass-logo" width="160" src={ToolBoxLogoSASS} />
-              </a>
-              <p>Syntactically Awesome<br /> Style Sheets</p>
-            </li>
-          </ul>
-        </div>
-
-        <div className="portfolio section">
-          <h1>
-            {t('Portfolio')}
-          </h1>
-
-          <div className="apps">
-            <div className="app-section">
-              <Tippy content="GOrendezvous (iOS) - Alex Viapiano" animation="fade" arrow >
-                <a href="https://itunes.apple.com/ca/app/gorendezvous/id1353526648?mt=8" target="_blank" className="app">
-                  <img className="mobile-app" src={pic07} alt="" />
-                </a>
-              </Tippy>
-              <Tippy content="GOrendezvous (Android) - Alex Viapiano" animation="fade" arrow >
-                <a href="https://play.google.com/store/apps/details?id=com.gorendezvous.mobile" target="_blank" className="app">
-                  <img className="mobile-app" src={pic08} alt="" />
-                </a>
-              </Tippy>
-              <Tippy content="Mix" animation="fade" arrow >
-                <a href="https://developer.cerence.com/#/login" target="_blank" className="app">
-                  <img src={pic16} alt="" />
-                </a>
-              </Tippy>
-              <Tippy content="Nite Bite - Alex Viapiano" animation="fade" arrow >
-                <a href="https://nitebite.herokuapp.com/" target="_blank" className="app">
-                  <img src={pic09} alt="" />
-                </a>
-              </Tippy>
-              <Tippy content="Ambition Funds - Alex Viapiano" animation="fade" arrow >
-                <a href="http://www.ambitionfunds.org/" target="_blank" className="app" >
-                  <img src={pic15} alt="" />
-                </a>
-              </Tippy>
-              <Tippy content="Groupe Atlanta - Alex Viapiano" animation="fade" arrow >
-                <a href="https://www.groupeatlanta.ca" target="_blank" className="app" >
-                  <img src={pic01} alt="" />
-                </a>
-              </Tippy>
-              <Tippy content="Biscotti Diana - Alex Viapiano" animation="fade" arrow >
-                <a href="https://biscottidiana.ca/" target="_blank" className="app" >
-                  <img src={pic06} alt="" />
-                </a>
-              </Tippy>
-              <Tippy content="Emtex - Alex Viapiano" animation="fade" arrow >
-                <a href="http://www.emtex.ca/" target="_blank" className="app">
-                  <img src={pic04} alt="" />
-                </a>
-              </Tippy>
-              <Tippy content="A Plus - Alex Viapiano" animation="fade" arrow >
-                <a href="https://alexviapiano.github.io/Aplus/" target="_blank" className="app">
-                  <img src={pic17} alt="" />
-                </a>
-              </Tippy>
-              <Tippy content="LUVI - Alex Viapiano" animation="fade" arrow >
-                <a href="www.luvi.ca" target="_blank" className="app">
-                  <img src={pic05} alt="" />
-                </a>
-              </Tippy>
-              <Tippy content="The Green Room - Alex Viapiano" animation="fade" arrow >
-                <a href="www.greenroomchannel.com" target="_blank" className="app">
-                  <img src={pic03} alt="" />
-                </a>
-              </Tippy>
-              <Tippy content="Condos Cite Avenir Laval - Alex Viapiano" animation="fade" arrow >
-                <a href="https://alexviapiano.github.io/CondosCiteAvenirLaval/" target="_blank" className="app">
-                  <img src={pic02} alt="" />
-                </a>
-              </Tippy>
+              <span className="fade-in">
+                <img alt="logo-title" className="logo-title" src={LogoTitle} />
+                <h1 className="catch-phrase">{t('catchPhrase')}</h1>
+              </span>
             </div>
-          </div>
-        </div>
+					</section>
 
-        <div className="coffee">
-          <AnimatedCoffee />
-          {t('Coffee')}
-          <a className="contact-us" href="mailto:montreact@gmail.com" role="button">
-            <button type="submit">{t('contactUs')}</button>
-          </a>
-        </div>
-      </React.Fragment>
-    );
-  }
-}
+				{/* <!-- Wrapper --> */}
+					<section id="wrapper">
 
-class AnimatedCoffee extends React.Component {
-  render() {
-    return (
-      <div
-        className="animated-coffee"
-        dangerouslySetInnerHTML={{
-          __html: `
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; display: block;" width="91px" height="91px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
-          <defs>
-            <linearGradient id="ldio-yswp1dynvd-gradient" x1="0%" x2="0%" y1="0%" y2="100%">
-              <stop offset="10%" stop-color="black" stop-opacity="0"></stop>
-              <stop offset="100%" stop-color="white" stop-opacity="1"></stop>
-            </linearGradient>
-            <mask id="ldio-yswp1dynvd-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
-              <rect x="22" y="8" width="56" height="54" fill="url(#ldio-yswp1dynvd-gradient)"></rect>
-            </mask>
-            <path id="ldio-yswp1dynvd-steam" d="M0-4c-2.1,2.6-2.1,6.4,0,9l0,0c2.1,2.6,2.1,6.4,0,9l0,0c-2.1,2.6-2.1,6.4,0,9l0,0c2.1,2.6,2.1,6.4,0,9l0,0 c-2.1,2.6-2.1,6.4,0,9l0,0c2.1,2.6,2.1,6.4,0,9c-2.1,2.6-2.1,6.4,0,9l0,0c2.1,2.6,2.1,6.4,0,9l0,0c-2.1,2.6-2.1,6.4,0,9l0,0 c2.1,2.6,2.1,6.4,0,9l0,0c-2.1,2.6-2.1,6.4,0,9l0,0c2.1,2.6,2.1,6.4,0,9c-2.1,2.6-2.1,6.4,0,9l0,0c2.1,2.6,2.1,6.4,0,9l0,0 c-2.1,2.6-2.1,6.4,0,9h0c2.1,2.6,2.1,6.4,0,9h0c-2.1,2.6-2.1,6.4,0,9h0c2.1,2.6,2.1,6.4,0,9" stroke-width="6" stroke-linecap="round" fill="#f00" stroke="#ffffff"></path>
-          </defs>
-          <g mask="url(#ldio-yswp1dynvd-mask)">
-            <use x="29" y="-2.52066" xlink:href="#ldio-yswp1dynvd-steam">
-              <animate attributeName="y" values="4;-14" keyTimes="0;1" dur="2.7027027027027026s" repeatCount="indefinite" begin="-1.3513513513513513s"></animate>
-            </use>
-            <use x="47" y="-2.02066" xlink:href="#ldio-yswp1dynvd-steam">
-              <animate attributeName="y" values="0;-18" keyTimes="0;1" dur="2.7027027027027026s" repeatCount="indefinite" begin="-0.6756756756756757s"></animate>
-            </use>
-            <use x="64" y="-7.52066" xlink:href="#ldio-yswp1dynvd-steam">
-              <animate attributeName="y" values="-4;-22" keyTimes="0;1" dur="2.7027027027027026s" repeatCount="indefinite" begin="-0.900900900900901s"></animate>
-            </use>
-          </g>
-          <path d="M81.2,52.5l-5.2,0V49c0-1.6-1.3-3-3-3H20c-1.6,0-3,1.3-3,3v11.6C17,71.3,25.7,80,36.5,80h20.1 c7.1,0,13.3-3.8,16.7-9.5h8.3c5.2,0,9.3-4.4,9-9.6C90.2,56.1,86,52.5,81.2,52.5z M81.5,67.5h-6.8c0.8-2.2,1.3-4.5,1.3-7v-5h5.5 c3.3,0,6,2.7,6,6S84.8,67.5,81.5,67.5z" fill="#7158dc"></path>
-          <path d="M78.8,88H19.2c-1.1,0-2-0.9-2-2s0.9-2,2-2h59.5c1.1,0,2,0.9,2,2S79.9,88,78.8,88z" fill="#FFF"></path>
-        </svg>
-      `,
-        }}
-      />
+						{/* <!-- One --> */}
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<a href="#" class="image"><img src={home1} alt="" /></a>
+									<div class="content">
+										<h2 class="major">{t('WhoAreWeTitle')}</h2>
+										<p>{t('WhoAreWeText')}</p>
+										<a href="#" class="special">Learn more</a>
+									</div>
+								</div>
+							</section>
+
+						{/* <!-- Two --> */}
+							<section id="two" class="wrapper alt spotlight style2 flat-bottom">
+								<div class="inner">
+									<a href="#" class="image"><img src={home2} alt="" /></a>
+									<div class="content">
+										<h2 class="major">{t('WhatWeDoTitle')}</h2>
+										<p>{t('WhatWeDoText')}</p>
+									</div>
+								</div>
+							</section>
+
+						{/* <!-- Three --> */}
+							{/* <section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="#" class="image"><img src={home2} alt="" /></a>
+									<div class="content">
+										<h2 class="major">{t('WhatWeDoTitle')}</h2>
+										<p>{t('WhatWeDoText')}</p>
+									</div>
+								</div>
+							</section> */}
+					</section>
+
+				{/* <!-- Footer --> */}
+					<section id="footer">
+
+            <div className="toolbox section">
+              <h1>{t('Expertise')}</h1>
+              <ul>
+                <li className="tool">
+                  <a target="_blank" href="https://reactjs.org/">
+                    <img alt="react-logo" width="160" src={ToolBoxLogoReact} />
+                  </a>
+                  <p>React</p>
+                </li>
+                <li className="tool">
+                  <a target="_blank" href="https://facebook.github.io/react-native/">
+                    <img alt="react-native-logo" width="160" src={ToolBoxLogoReactNative} />
+                  </a>
+                  <p>React Native</p>
+                </li>
+                <li className="tool">
+                  <a target="_blank" href="https://redux.js.org/">
+                    <img alt="redux-logo" width="160" src={ToolBoxLogoRedux} />
+                  </a>
+                  <p>Redux</p>
+                </li>
+                <li className="tool">
+                  <a target="_blank" href="https://expo.io/">
+                    <img alt="expo-io-logo" width="160" src={ToolBoxLogoExpoIO} />
+                  </a>
+                  <p>Expo</p>
+                </li>
+                <li className="tool">
+                  <a target="_blank" href="https://sass-lang.com/">
+                    <img alt="sass-logo" width="160" src={ToolBoxLogoSASS} />
+                  </a>
+                  <p>Syntactically Awesome<br /> Style Sheets</p>
+                </li>
+              </ul>
+            </div>
+
+						<div class="inner">
+							<h2 class="major">Get in touch</h2>
+							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="4"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+							<ul class="contact">
+								<li class="icon solid fa-home">
+									Untitled Inc<br />
+									1234 Somewhere Road Suite #2894<br />
+									Nashville, TN 00000-0000
+								</li>
+								<li class="icon solid fa-phone">(514) 898-4828</li>
+								<li class="icon solid fa-envelope"><a href="mailto:alexviapiano@montreact.com">alexviapiano@montreact.com</a></li>
+                <li class="icon brands fa-linkedin"><a href="https://ca.linkedin.com/company/montreact">facebook.com/untitled-tld</a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Montreact</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
     );
   }
 }
