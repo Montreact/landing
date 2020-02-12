@@ -16,7 +16,7 @@ export class Auth0Provider extends Component {
 	
 	config = {
 		domain: 'montreact.auth0.com',
-		client_id: '4YYK2jr5BAz9xHicC75kEoUAEpbJvP2R',
+		client_id: 'bMo8YsyFdKLltjz1oDrzTK3Cpm4k994r',
 		redirect_uri: window.location.origin
 	};
 

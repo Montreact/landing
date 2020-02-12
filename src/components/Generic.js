@@ -89,7 +89,7 @@ class Generic extends React.Component {
                 </ul>
               </form>
               <ul className="contact">
-                <li className="btn-purple"><a href="mailto:montreact@gmail.com">montreact@gmail.com</a></li>
+                <li className="btn-purple"><a href="mailto:montreact@gmail.com">info@montreact.com</a></li>
                 <li className="btn-purple"><a href="https://ca.linkedin.com/company/montreact">linkedin.com/montreact</a></li> 
                 <li className="btn-purple"><a href="tel:514-898-4828">(514) 898-4828</a></li>             
               </ul>

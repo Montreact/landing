@@ -23,15 +23,15 @@ class Nav extends React.Component {
         const t = this.props.t;    
         
         return (
-            <header id="header" className="nav-bar">
+            <header id="header" className="nav-bar animated fadeInDown delay-1s">
                 <a className="hide-on-small" href="/">Montreact</a>
                 <nav>
-                    <a href="/">{t('NavHome')}</a>
-                    <a href="/generic">{t('NavGeneric')}</a>
-                    <a href="/elements">{t('NavElements')}</a>
+                    <a href="#">{t('NavHome')}</a>
+                    {/* <a href="#generic">{t('NavGeneric')}</a>
+                    <a href="#elements">{t('NavElements')}</a>  */}
                     { this.props.auth0.isAuthenticated ? 
                         <>
-                        <a href="/generic">Account</a>
+                        <a href="#generic">Account</a>
                         <a onClick={this.logout}>Logout</a>
                         </>
                     : 

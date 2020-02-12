@@ -61,7 +61,7 @@ class HomePage extends React.Component {
 						{/* <!-- One --> */}
 							<section id="one" className="wrapper spotlight style1">
 								<div className="inner">
-									<a href="#" className="image"><img src={home1} alt="" /></a>
+									<a href="#" className="image home-image"><img src={home1} alt="" /></a>
 									<div className="content">
 										<h2 className="major">{t('WhoAreWeTitle')}</h2>
 										<p>{t('WhoAreWeText')}</p>
@@ -73,7 +73,7 @@ class HomePage extends React.Component {
 						{/* <!-- Two --> */}
 							<section id="two" className="wrapper alt spotlight style2 flat-bottom">
 								<div className="inner">
-									<a href="#" className="image"><img src={home2} alt="" /></a>
+									<a href="#" className="image home-image"><img src={home2} alt="" /></a>
 									<div className="content">
 										<h2 className="major">{t('WhatWeDoTitle')}</h2>
 										<p>{t('WhatWeDoText')}</p>
@@ -139,66 +139,66 @@ class HomePage extends React.Component {
 
               <div className="apps">
                 <div className="app-section">
-                  <Tippy content="GOrendezvous (iOS) - Alex Viapiano" animation="fade" arrow followCursor={true}>
                     <a href="https://itunes.apple.com/ca/app/gorendezvous/id1353526648?mt=8" target="_blank" className="app">
                       <img src={pic07} alt="" />
+                      <span>GOrendezvous (iOS)</span>
                     </a>
-                  </Tippy>
-                  <Tippy content="Mix" animation="fade" arrow followCursor>
+
                     <a href="https://developer.cerence.com/#/login" target="_blank" className="app">
                       <img src={pic11} alt="" />
+                      <span>MIX</span>
                     </a>
-                  </Tippy>
-                  <Tippy content="LUVI - Alex Viapiano" animation="fade" arrow followCursor>
+
                     <a href="https://www.luvi.ca" target="_blank" className="app">
                       <img src={pic05} alt="" />
+                      <span>LUVI</span>
                     </a>
-                  </Tippy>
-                  <Tippy content="Nite Bite - Alex Viapiano" animation="fade" arrow followCursor>
+
                     <a href="https://nitebite.herokuapp.com/" target="_blank" className="app">
                       <img src={pic09} alt="" />
+                      <span>Nite Bites</span>
                     </a>
-                  </Tippy>
-                  <Tippy content="Ambition Funds - Alex Viapiano" animation="fade" arrow followCursor>
+
                     <a href="http://www.ambitionfunds.org/" target="_blank" className="app" >
                       <img src={pic10} alt="" />
+                      <span>Ambition Funds</span>
                     </a>
-                  </Tippy>
-                  <Tippy content="Groupe Atlanta - Alex Viapiano" animation="fade" arrow followCursor>
+ 
                     <a href="https://www.groupeatlanta.ca" target="_blank" className="app" >
                       <img src={pic01} alt="" />
+                      <span>Groupe Atlanta</span>
                     </a>
-                  </Tippy>
-                  <Tippy content="Biscotti Diana - Alex Viapiano" animation="fade" arrow followCursor>
+
                     <a href="https://biscottidiana.ca/" target="_blank" className="app">
                       <img src={pic06} alt="" />
+                      <span>Biscotti Diana</span>
                     </a>
-                  </Tippy>
-                  <Tippy content="A Plus - Alex Viapiano" animation="fade" arrow followCursor>
+
                     <a href="https://alexviapiano.github.io/Aplus/" target="_blank" className="app">
                       <img src={pic12} alt="" />
+                      <span>A Plus</span>
                     </a>
-                  </Tippy>
-                  <Tippy content="The Green Room - Alex Viapiano" animation="fade" arrow followCursor >
+
                     <a href="https://www.greenroomchannel.com" target="_blank" className="app">
                       <img src={pic03} alt="" />
+                      <span>The Green Room</span>
                     </a>
-                  </Tippy>
-                  <Tippy content="GOrendezvous (Android) - Alex Viapiano" animation="fade" arrow followCursor>
+
                     <a href="https://play.google.com/store/apps/details?id=com.gorendezvous.mobile" target="_blank" className="app">
                       <img src={pic08} alt="" />
+                      <span>GOrendezvous (Android)</span>
                     </a>
-                  </Tippy>
-                  <Tippy content="Emtex - Alex Viapiano" animation="fade" arrow followCursor>
+
                     <a href="http://www.emtex.ca/" target="_blank" className="app">
                       <img src={pic04} alt="" />
+                      <span>Emtex</span>
                     </a>
-                  </Tippy>
-                  <Tippy content="Condos Cite Avenir Laval - Alex Viapiano" animation="fade" arrow followCursor >
+
                     <a href="https://alexviapiano.github.io/CondosCiteAvenirLaval/" target="_blank" className="app">
                       <img src={pic02} alt="" />
+                      <span>Condo Cite Avenir</span>
                     </a>
-                  </Tippy>
+
                 </div>
               </div>
             </div>
@@ -230,9 +230,8 @@ class HomePage extends React.Component {
                 </ul>
               </form>
               <ul className="contact">
-                <li className="btn-purple"><a href="mailto:montreact@gmail.com">montreact@gmail.com</a></li>
+                <li className="btn-purple"><a href="mailto:montreact@gmail.com">info@montreact.com</a></li>
                 <li className="btn-purple"><a href="https://ca.linkedin.com/company/montreact">linkedin.com/montreact</a></li> 
-                <li className="btn-purple"><a href="tel:514-898-4828">(514) 898-4828</a></li>             
               </ul>
               <ul className="copyright">
                 <li>&copy; Montreact</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>

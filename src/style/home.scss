@@ -123,6 +123,12 @@ body {
 			}
 		}
 	}
+
+	.home-image {
+		flex-shrink: 0;
+		max-width: 250px;
+		max-height: 250px;
+	}
 	
 	.section.toolbox {
 		background: $brand-1;
@@ -247,14 +253,19 @@ body {
 			padding: 10px 0px 10px 0px;
 		}
 		.app {
-			display: inline-block;
 			position: relative;
 			padding: 10px;
+			margin: 10px 0px 10px 0px;
 			width: 200px;
 			display: flex;
-			justify-content: center;	
-			align-items: center;	
-			border: none;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			span {
+				margin-top: 10px;
+				font-weight: 600;
+				font-size: 16px;
+			}
 			&:hover {
 				transform: scale(1.05);
 				border-radius: 15px;

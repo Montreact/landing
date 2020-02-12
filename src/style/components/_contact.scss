@@ -56,6 +56,12 @@
 				height: 3.75em;
 				letter-spacing: 0.1em;
 				line-height: 3.75em;
+				min-width: 350px;
+				text-align: center;
+				&:hover {
+					transform: scale(1.05);
+					border-radius: 15px;
+				}
 			}
 		}
 
