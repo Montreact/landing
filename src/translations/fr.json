@@ -1,4 +1,7 @@
 {
+  "NavHome": "Accueil",
+  "NavGeneric": "Générique",
+  "NavElements": "Éléments",
   "WhatWeDoText": "Nous créons des interfaces complexes et réactives de manière simple avec des interactions cohérentes et de haute qualité. Nous sommes ici pour vous aider à prendre des décisions concernant les éléments restants de la technologie Web requis en fonction de vos besoins, de votre équipe et de vos objectifs.",
   "WhatWeDoTextExperts": "Nous sommes les experts JavaScript.",
   "WhatWeDoTextHappy": "Si vous n'êtes pas heureux, nous ne le sommes pas.",

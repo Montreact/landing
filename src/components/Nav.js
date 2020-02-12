@@ -17,12 +17,12 @@ class Nav extends React.Component {
         const t = this.props.t;    
         
         return (
-            <header id="header" className="alt">
-                <h1><a href="index.html">Solid State</a></h1>
+            <header id="header" className="nav-bar">
+                <a className="hide-on-small" href="/">Montreact</a>
                 <nav>
-                    <a href="/">Home</a>
-                    <a href="/generic">Generic</a>
-                    <a href="/elements">Elements</a>
+                    <a href="/">{t('NavHome')}</a>
+                    <a href="/generic">{t('NavGeneric')}</a>
+                    <a href="/elements">{t('NavElements')}</a>
                     <a onClick={() => this.onLocaleToggle(localeToggle)}
                     onKeyDown={() => this.onLocaleToggle(localeToggle)}>
                     {localeToggle}

@@ -1,4 +1,7 @@
 {
+  "NavHome": "Home",
+  "NavGeneric": "Generic",
+  "NavElements": "Elements",
   "WhatWeDoText": "We effectively produce complex and responsive interfaces in a simple manner. We are here to help make decisions on the remaining parts of the tech stack required based on your needs, team and business goals.",
   "WhatWeDoTextExperts": "We're the JavaScript experts.",
   "WhatWeDoTextHappy": "If you're not happy, we’re not happy.",
