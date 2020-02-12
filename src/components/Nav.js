@@ -6,6 +6,12 @@ class Nav extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+        this.logout = this.logout.bind(this);
+    }
+  
+    logout() {
+      this.props.auth0.logout();
+      this.forceUpdate();
     }
 
     onLocaleToggle = locale => {
@@ -23,6 +29,14 @@ class Nav extends React.Component {
                     <a href="/">{t('NavHome')}</a>
                     <a href="/generic">{t('NavGeneric')}</a>
                     <a href="/elements">{t('NavElements')}</a>
+                    { this.props.auth0.isAuthenticated ? 
+                        <>
+                        <a href="/generic">Account</a>
+                        <a onClick={this.logout}>Logout</a>
+                        </>
+                    : 
+                        <a onClick={this.props.auth0.loginWithRedirect}>Login</a> 
+                    }
                     <a onClick={() => this.onLocaleToggle(localeToggle)}
                     onKeyDown={() => this.onLocaleToggle(localeToggle)}>
                     {localeToggle}
