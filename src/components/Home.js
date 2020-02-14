@@ -1,6 +1,4 @@
 import React from 'react';
-import Tippy from '@tippy.js/react';
-import 'tippy.js/dist/tippy.css';
 import i18n from "i18next";
 import { withTranslation } from 'react-i18next';
 

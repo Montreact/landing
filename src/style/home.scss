@@ -56,16 +56,12 @@ body {
 			position: relative;
 		}
 
-		.logo {
-			width: 50%;
-			max-width: 400px;
-		}
-
 		.logo-container {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			overflow: hidden;
+			padding-top: 20px;
 			.logo-half {
 				max-width: 30%;
 
@@ -84,6 +80,9 @@ body {
 					-webkit-animation-delay: 0.3s;
 					animation-delay: 0.3s;
 				}
+				&:hover {
+					transform: scale(1.05);
+				}
 			}
 		}
 
@@ -92,6 +91,9 @@ body {
 			margin-bottom: 40px;
 			width: 300px;
 			max-width: 60%;
+			&:hover {
+				transform: scale(1.05);
+			}
 		}
 
 		.catch-phrase {
@@ -265,6 +267,9 @@ body {
 				margin-top: 10px;
 				font-weight: 600;
 				font-size: 16px;
+				line-height: 16px;
+				text-align: center;
+				min-height: 32px;
 			}
 			&:hover {
 				transform: scale(1.05);

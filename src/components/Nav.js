@@ -1,6 +1,8 @@
 import React from 'react';
 import i18n from "i18next";
 import { withTranslation } from 'react-i18next';
+import Tippy from '@tippy.js/react';
+import 'tippy.js/dist/tippy.css';
 
 class Nav extends React.Component {
     constructor(props) {
@@ -16,31 +18,29 @@ class Nav extends React.Component {
 
     onLocaleToggle = locale => {
         i18n.changeLanguage(locale);
+        this.forceUpdate();
     };
 
     render() {
         const localeToggle = i18n.language === 'en' ? 'fr' : 'en';
         const t = this.props.t;    
-        
         return (
             <header id="header" className="nav-bar animated fadeInDown delay-1s">
-                <a className="hide-on-small" href="/">Montreact</a>
+                <a href="#">Montreact</a>
                 <nav>
-                    <a href="#">{t('NavHome')}</a>
-                    {/* <a href="#generic">{t('NavGeneric')}</a>
-                    <a href="#elements">{t('NavElements')}</a>  */}
+                    <a onClick={() => this.onLocaleToggle(localeToggle)} onKeyDown={() => this.onLocaleToggle(localeToggle)}>{localeToggle}</a>
                     { this.props.auth0.isAuthenticated ? 
-                        <>
-                        <a href="#generic">Account</a>
-                        <a onClick={this.logout}>Logout</a>
-                        </>
+                        <Tippy boundary="window" placement="bottom-start" trigger="click" hideOnClick={true} interactive content={
+                            <div className="user-dropdown">
+                                <a href="#account">Account</a> 
+                                <a onClick={this.logout}>Logout</a>
+                            </div>
+                        }>
+                            <a><img src={this.props.auth0.user.picture} alt="" ></img></a>
+                        </Tippy>
                     : 
                         <a onClick={this.props.auth0.loginWithRedirect}>Login</a> 
                     }
-                    <a onClick={() => this.onLocaleToggle(localeToggle)}
-                    onKeyDown={() => this.onLocaleToggle(localeToggle)}>
-                    {localeToggle}
-                    </a>
                 </nav>
             </header>
         );

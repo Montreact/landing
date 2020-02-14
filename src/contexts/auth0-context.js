@@ -9,6 +9,7 @@ export const useAuth0 = () => useContext(Auth0Context);
 export class Auth0Provider extends Component {
 	state = {
 		auth0Client: null,
+		authClientCreated: false,
 		isLoading: true,
 		isAuthenticated: false,
 		user: null
@@ -17,7 +18,7 @@ export class Auth0Provider extends Component {
 	config = {
 		domain: 'montreact.auth0.com',
 		client_id: 'bMo8YsyFdKLltjz1oDrzTK3Cpm4k994r',
-		redirect_uri: window.location.origin
+		redirect_uri: window.location.origin + '/#/'
 	};
 
 	componentDidMount() {
@@ -27,7 +28,7 @@ export class Auth0Provider extends Component {
 	// initialize the auth0 library
 	initializeAuth0 = () => {
     createAuth0Client(this.config).then(auth0Client => {
-      this.setState({ auth0Client: auth0Client });
+      this.setState({ auth0Client: auth0Client, authClientCreated: true });
       // check to see if they have been redirected after login
       if (window.location.search.includes('code=')) {
         return this.handleRedirectCallback();
@@ -55,10 +56,11 @@ export class Auth0Provider extends Component {
 	};
 
 	render() {
-		const { auth0Client, isLoading, isAuthenticated, user } = this.state;
+		const { auth0Client, isLoading, isAuthenticated, user, authClientCreated } = this.state;
 		const { children } = this.props;
 
 		const configObject = {
+			authClientCreated,
 			isLoading,
 			isAuthenticated,
 			user,

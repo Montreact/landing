@@ -4,6 +4,7 @@ import { Auth0Context } from './contexts/auth0-context';
 import "./style/base.scss";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
+import Account from "./components/Account";
 import Generic from "./components/Generic";
 import Elements from "./components/Elements";
 
@@ -12,8 +13,9 @@ function App() {
   return (
     <HashRouter>
       <Nav auth0={auth0} />
-      <Switch>
+      <Switch auth0={auth0} >
         <Route exact path="/" component={Home} />
+        <Route exact path="/account" component={() => <Account auth0={auth0} /> } />
         <Route exact path="/generic" component={Generic} />
         <Route exact path="/elements" component={Elements} />
       </Switch>

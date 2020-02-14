@@ -12,7 +12,6 @@ class Elements extends React.Component {
   }
 
   render() {
-    const localeToggle = i18n.language === 'en' ? 'fr' : 'en';
     const t = this.props.t;    
     
     return (

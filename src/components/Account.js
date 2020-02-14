@@ -5,32 +5,40 @@ import { withTranslation } from 'react-i18next';
 import home1 from '../images/home1.jpg';
 import home2 from '../images/home2.jpg';
 
-class Generic extends React.Component {
+class Account extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      user: {
+        given_name: '',
+        picture: ''
+      }
+    };
+  }
+
+  componentDidMount() {
+    if (this.props.auth0 && this.props.auth0.user) {
+      this.setState({ user: this.props.auth0.user });
+    }
   }
 
   render() {
     const t = this.props.t;    
-    
+    console.log(this.state);
+    var name = this.state.user.given_name ? this.state.user.given_name : this.state.user.name ? this.state.user.name : '';
     return (
 			<div id="page-wrapper">
 
           {/* <!-- Wrapper --> */}
 					<section id="wrapper">
-						<header>
-							<div className="inner">
-								<h2>Generic</h2>
-								<p>Phasellus non pulvinar erat. Fusce tincidunt nisl eget ipsum.</p>
-							</div>
-						</header>
 
 						{/* <!-- Content --> */}
 							<div className="wrapper">
 								<div className="inner">
 
-									<h3 className="major">Lorem ipsum dolor</h3>
+                  <img src={this.state.user.picture} alt="" ></img>
+
+                  <h3 className="major">Welcome, {this.state.user.given_name}</h3>
 									<p>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
 
 									<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
@@ -143,5 +151,5 @@ class AnimatedCoffee extends React.Component {
   }
 }
 
-export default withTranslation()(Generic);
+export default withTranslation()(Account);
 
