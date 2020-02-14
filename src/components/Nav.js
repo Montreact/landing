@@ -1,6 +1,7 @@
 import React from 'react';
 import i18n from "i18next";
 import { withTranslation } from 'react-i18next';
+import LogoTitle from '../images/logo_title.png';
 // import Tippy from '@tippy.js/react';
 // import 'tippy.js/dist/tippy.css';
 
@@ -26,10 +27,10 @@ class Nav extends React.Component {
         const t = this.props.t;    
         return (
             <header id="header" className="nav-bar animated fadeInDown delay-1s">
-                <a href="#">Montreact</a>
+                <a className="nav-title-container" href="#"><img alt="logo-title" className="nav-title" src={LogoTitle} /></a>
                 <nav>
+                    <a href="mailto:hey@montreact.com">{t('letsTalk')}</a>
                     <a onClick={() => this.onLocaleToggle(localeToggle)} onKeyDown={() => this.onLocaleToggle(localeToggle)}>{localeToggle}</a>
-                    <a href="mailto:hey@montreact.com"><button>{t('letsTalk')}</button></a>
 
                     {/* { this.props.auth0.isAuthenticated ? 
                         <Tippy className="user-dropdown-container" boundary="window" placement="bottom-start" trigger="click" interactive arrow={false} content={
