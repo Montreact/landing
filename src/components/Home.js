@@ -228,7 +228,7 @@ class HomePage extends React.Component {
                 </ul>
               </form>
               <ul className="contact">
-                <li className="btn-purple"><a href="mailto:montreact@gmail.com">info@montreact.com</a></li>
+                <li className="btn-purple"><a href="mailto:hey@montreact.com">hey@montreact.com</a></li>
                 <li className="btn-purple"><a href="https://ca.linkedin.com/company/montreact">linkedin.com/montreact</a></li> 
               </ul>
               <ul className="copyright">
