@@ -24,13 +24,19 @@ class Nav extends React.Component {
     render() {
         const localeToggle = i18n.language === 'en' ? 'fr' : 'en';
         const t = this.props.t;    
+        // if (auth0.authClientCreated && !auth0.isAuthenticated) {
+        //     auth0.getTokenSilently({ignoreCache: false});
+        // }
         return (
             <header id="header" className="nav-bar animated fadeInDown delay-1s">
                 <a href="#">Montreact</a>
                 <nav>
                     <a onClick={() => this.onLocaleToggle(localeToggle)} onKeyDown={() => this.onLocaleToggle(localeToggle)}>{localeToggle}</a>
-                    { this.props.auth0.isAuthenticated ? 
-                        <Tippy boundary="window" placement="bottom-start" trigger="click" hideOnClick={true} interactive content={
+                    <a href="mailto:info@montreact.com">
+                        <button>{t('letsTalk')}</button>
+                    </a>
+                    {/* { this.props.auth0.isAuthenticated ? 
+                        <Tippy className="user-dropdown-container" boundary="window" placement="bottom-start" trigger="click" interactive arrow={false} content={
                             <div className="user-dropdown">
                                 <a href="#account">Account</a> 
                                 <a onClick={this.logout}>Logout</a>
@@ -40,7 +46,7 @@ class Nav extends React.Component {
                         </Tippy>
                     : 
                         <a onClick={this.props.auth0.loginWithRedirect}>Login</a> 
-                    }
+                    } */}
                 </nav>
             </header>
         );

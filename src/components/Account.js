@@ -24,10 +24,9 @@ class Account extends React.Component {
 
   render() {
     const t = this.props.t;    
-    console.log(this.state);
     var name = this.state.user.given_name ? this.state.user.given_name : this.state.user.name ? this.state.user.name : '';
     return (
-			<div id="page-wrapper">
+			<div id="page-wrapper account-page">
 
           {/* <!-- Wrapper --> */}
 					<section id="wrapper">
@@ -43,19 +42,10 @@ class Account extends React.Component {
 
 									<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
 
-									<h3 className="major">Vitae phasellus</h3>
-									<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-
 									<section className="features">
 										<article>
 											<a href="#" className="image"><img src={home1} alt="" /></a>
 											<h3 className="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" className="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" className="image"><img src={home2} alt="" /></a>
-											<h3 className="major">Nisl placerat</h3>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
 											<a href="#" className="special">Learn more</a>
 										</article>
@@ -70,33 +60,8 @@ class Account extends React.Component {
 					<section id="footer">
 
             <div className="inner">
-              <h2 className="major">
-                <AnimatedCoffee />
-                <br></br>
-                <div className="coffee-text">{t('Coffee')}</div>
-              </h2>
-
-              <form method="post" action="https://formspree.io/montreact@gmail.com">
-                <div className="fields">
-                  <div className="field">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" name="name" id="name" />
-                  </div>
-                  <div className="field">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name="email" id="email" />
-                  </div>
-                  <div className="field">
-                    <label htmlFor="message">Message</label>
-                    <textarea name="message" id="message" rows="4"></textarea>
-                  </div>
-                </div>
-                <ul className="actions">
-                  <li><input type="submit" value="Send Message" /></li>
-                </ul>
-              </form>
               <ul className="contact">
-                <li className="btn-purple"><a href="mailto:montreact@gmail.com">info@montreact.com</a></li>
+                <li className="btn-purple"><a href="mailto:info@montreact.com">info@montreact.com</a></li>
                 <li className="btn-purple"><a href="https://ca.linkedin.com/company/montreact">linkedin.com/montreact</a></li> 
                 <li className="btn-purple"><a href="tel:514-898-4828">(514) 898-4828</a></li>             
               </ul>

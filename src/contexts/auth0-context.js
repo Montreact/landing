@@ -23,36 +23,38 @@ export class Auth0Provider extends Component {
 
 	componentDidMount() {
 		this.initializeAuth0();
-  }
+  	}
 
 	// initialize the auth0 library
 	initializeAuth0 = () => {
-    createAuth0Client(this.config).then(auth0Client => {
-      this.setState({ auth0Client: auth0Client, authClientCreated: true });
-      // check to see if they have been redirected after login
-      if (window.location.search.includes('code=')) {
-        return this.handleRedirectCallback();
-      }
 
-      auth0Client.isAuthenticated().then(isAuthenticated => {
-        if (isAuthenticated) {
-          auth0Client.getUser().then(user => {
-            this.setState({ isLoading: false, isAuthenticated, user });
-          })
-        } else return null
-      })
-    });
+		createAuth0Client(this.config).then(auth0Client => {
+			this.setState({ auth0Client: auth0Client, authClientCreated: true });
+
+			// check to see if they have been redirected after login
+			if (window.location.search.includes('code=')) {
+				return this.handleRedirectCallback();
+			}
+
+			auth0Client.isAuthenticated().then(isAuthenticated => {
+				if (isAuthenticated) {
+					auth0Client.getUser().then(user => {
+						this.setState({ isLoading: false, isAuthenticated, user });
+					})
+				} else return null
+			})
+		});
 
 	};
 
 	handleRedirectCallback = () => {
 		this.setState({ isLoading: true });
-		this.state.auth0Client.handleRedirectCallback().then(() => {
-      this.state.auth0Client.getUser().then((user) => {
-        this.setState({ user, isAuthenticated: true, isLoading: false });
-        window.history.replaceState({}, document.title, window.location.pathname);
-      })
-    })
+			this.state.auth0Client.handleRedirectCallback().then(() => {
+			this.state.auth0Client.getUser().then((user) => {
+				this.setState({ user, isAuthenticated: true, isLoading: false });
+				window.history.replaceState({}, document.title, window.location.pathname);
+			})
+		})
 	};
 
 	render() {
