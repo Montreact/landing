@@ -3,6 +3,9 @@
 @import 'general.scss';
 @import 'animated.scss';
 
+$fa-font-path: "~font-awesome/fonts/";
+@import '~font-awesome/scss/font-awesome.scss';
+
 @import 'libs/vars';
 @import 'libs/functions';
 @import 'libs/mixins';
