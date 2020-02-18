@@ -22,6 +22,16 @@ a {
 				width: 100px;
 			}
 		}
+		@media (max-width: 450px) {
+			.nav-title {
+				display: none;
+			}
+			.nav-title-small {
+				display: block !important;
+				width: 40px;
+			}
+		}
+		
 	}
 	nav {
 		display: flex;
@@ -32,7 +42,7 @@ a {
 			transition: background-color .2s ease-in-out;
 			border-radius: 5px;
 			box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.125);
-			margin-right: 7px;
+			margin-right: 10px;
 			max-height: 80%;
 			&:hover {
 				transform: scale(1.05);
@@ -62,6 +72,8 @@ a {
 		flex-direction: column;
 		a {
 			padding: 7px !important;
+			box-shadow: none;
+			margin: 0px;
 		}
 	}
 	
