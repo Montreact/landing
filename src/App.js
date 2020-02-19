@@ -1,6 +1,6 @@
 import React, { Component, useContext } from "react";
 import { Switch, Route, BrowserRouter, HashRouter } from 'react-router-dom';
-import { Auth0Context } from './contexts/auth0-context'; 
+import { Auth0Context } from './components/Auth.js'; 
 import "./style/base.scss";
 import Nav from "./components/Nav";
 import Home from "./components/Home";

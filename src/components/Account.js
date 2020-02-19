@@ -32,7 +32,7 @@ class Account extends React.Component {
 					<section id="wrapper">
 
 						{/* <!-- Content --> */}
-							<div className="wrapper">
+							<div className="wrapper account-wrapper">
 								<div className="inner">
 
                   <img src={this.state.user.picture} alt="" ></img>
@@ -47,7 +47,6 @@ class Account extends React.Component {
 											<a href="#" className="image"><img src={home1} alt="" /></a>
 											<h3 className="major">Sed feugiat lorem</h3>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" className="special">Learn more</a>
 										</article>
 									</section>
 
@@ -60,11 +59,6 @@ class Account extends React.Component {
 					<section id="footer">
 
             <div className="inner">
-              <ul className="contact">
-                <li className="btn-purple"><a href="mailto:hey@montreact.com">hey@montreact.com</a></li>
-                <li className="btn-purple"><a href="https://ca.linkedin.com/company/montreact">linkedin.com/montreact</a></li> 
-                <li className="btn-purple"><a href="tel:514-898-4828">(514) 898-4828</a></li>             
-              </ul>
               <ul className="copyright">
                 <li>&copy; Montreact</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
               </ul>

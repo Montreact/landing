@@ -45,7 +45,7 @@ class Nav extends React.Component {
                         }>
                             <img src={this.props.auth0.user.picture} alt="" ></img>
                         </Tippy>
-                    : this.props.auth0 ?
+                    : this.props.auth0.authClientCreated ?
                         <a onClick={this.props.auth0.loginWithRedirect}>Login</a> 
                     : null }
                 </nav>

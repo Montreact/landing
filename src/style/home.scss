@@ -80,9 +80,6 @@ body {
 					-webkit-animation-delay: 0.3s;
 					animation-delay: 0.3s;
 				}
-				&:hover {
-					transform: scale(1.05);
-				}
 			}
 		}
 
@@ -91,9 +88,6 @@ body {
 			margin-bottom: 40px;
 			width: 300px;
 			max-width: 60%;
-			&:hover {
-				transform: scale(1.05);
-			}
 		}
 
 		.catch-phrase {
