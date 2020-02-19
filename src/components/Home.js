@@ -229,7 +229,8 @@ class HomePage extends React.Component {
               </form>
               <ul className="contact">
                 <li className="btn-purple"><a href="mailto:hey@montreact.com"><i className="fa fa-envelope"/>hey@montreact.com</a></li>
-                <li className="btn-purple"><a href="https://ca.linkedin.com/company/montreact"><i className="fa fa-linkedin"/>linkedin.com/montreact</a></li> 
+                <li className="btn-purple"><a href="https://ca.linkedin.com/company/montreact"><i className="fa fa-linkedin"/>LinkedIn</a></li> 
+                <li className="btn-purple"><a href="https://www.facebook.com/Montreact"><i className="fa fa-facebook"/>Facebook</a></li> 
               </ul>
               <ul className="copyright">
                 <li>&copy; Montreact</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>

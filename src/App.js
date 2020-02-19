@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Account from "./components/Account";
 import Generic from "./components/Generic";
 import Elements from "./components/Elements";
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 function App() {
   const auth0 = useContext(Auth0Context); 
@@ -19,6 +20,10 @@ function App() {
         <Route exact path="/generic" component={Generic} />
         <Route exact path="/elements" component={Elements} />
       </Switch>
+      <MessengerCustomerChat
+        pageId="105134164415024"
+        appId="190910228935872"
+      />
     </HashRouter>
   );
 }
