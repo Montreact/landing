@@ -4,20 +4,16 @@ import { withTranslation } from 'react-i18next';
 import LogoTitle from '../images/logo_title.png';
 import LogoTitleSmall from '../images/logo_title_small.png';
 import Tippy from '@tippy.js/react';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
+var _ = require('lodash');
 import 'tippy.js/dist/tippy.css';
 
 class Nav extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
-        this.logout = this.logout.bind(this);
     }
   
-    logout() {
-      this.props.auth0.logout();
-      this.forceUpdate();
-    }
-
     onLocaleToggle = locale => {
         i18n.changeLanguage(locale);
         this.forceUpdate();
@@ -25,7 +21,8 @@ class Nav extends React.Component {
 
     render() {
         const localeToggle = i18n.language === 'en' ? 'fr' : 'en';
-        const t = this.props.t;    
+        const t = this.props.t; 
+        const user = this.props.user;   
         return (
             <header id="header" className="nav-bar animated fadeInDown delay-1s">
                 <a className="nav-title-container" href="#">
@@ -35,19 +32,25 @@ class Nav extends React.Component {
                 <nav>
                     <a href="mailto:hey@montreact.com">{t('letsTalk')}</a>
                     <a onClick={() => this.onLocaleToggle(localeToggle)} onKeyDown={() => this.onLocaleToggle(localeToggle)}>{localeToggle}</a>
-
-                    { this.props.auth0.isAuthenticated ? 
+                    { _.isEmpty(user) ? 
+                        <FacebookLogin
+                            appId="190910228935872"
+                            autoLoad={true}
+                            onClick={this.login}
+                            callback={this.props.login} 
+                            fields="name,email,picture"
+                            render={renderProps => ( <button onClick={renderProps.onClick}>Login</button> )}
+                            />
+                        :
                         <Tippy className="user-dropdown-container" boundary="window" placement="bottom-start" trigger="click" interactive arrow={false} content={
                             <div className="user-dropdown">
                                 <a href="#account">Account</a> 
-                                <a onClick={this.logout}>Logout</a>
+                                <a onClick={this.props.logout}>Logout</a>
                             </div>
                         }>
-                            <img src={this.props.auth0.user.picture} alt="" ></img>
+                            <img src={_.get(user, 'picture.data.url')} alt="" ></img>
                         </Tippy>
-                    : this.props.auth0.authClientCreated ?
-                        <a onClick={this.props.auth0.loginWithRedirect}>Login</a> 
-                    : null }
+                    }
                 </nav>
             </header>
         );
