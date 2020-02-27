@@ -15,5 +15,8 @@
   "contactUs": "Contactez-nous",
   "Portfolio": "Notro portfolio",
   "WebAndMobileApps": "Applications web et mobile",
-  "BusinessLandingPage": "Page de destination"
+  "BusinessLandingPage": "Page de destination",
+  "Welcome": "Bienvenue, ",
+  "OurTeam": "Vous recherchez un partenaire de confiance pour vous aider dans votre projet ReactJS? Notre équipe de développement ReactJS travaille avec nos clients pour créer des solutions logicielles de qualité dans de nombreux secteurs, comme la santé, la finance, la construction, l'immobilier, etc. Si vous avez une nouvelle idée de produit ou souhaitez agrandir votre équipe, nous sommes là pour vous aider à atteindre vos objectifs.",
+  "MeetTheFounders": "Rencontrez les fondateurs"
 }

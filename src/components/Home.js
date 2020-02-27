@@ -1,7 +1,5 @@
 import React from 'react';
-import i18n from "i18next";
 import { withTranslation } from 'react-i18next';
-
 import LogoLeft from '../images/logo-left.png';
 import LogoRight from '../images/logo-right.png';
 import LogoTitle from '../images/logo_title.png';
@@ -32,21 +30,19 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const localeToggle = i18n.language === 'en' ? 'fr' : 'en';
-    const t = this.props.t;    
-    
+    const t = this.props.t;        
     return (
-			<div id="page-wrapper">
+			<div id="page-wrapper" className="animated fadeIn delay-05s">
 
 				{/* <!-- Banner --> */}
 					<section id="banner">
-						<div className="inner banner-container animated fadeIn delay-1s">
-              <span className="logo-container animated jello delay-5s ">
-                <img alt="logo-half" className="logo-half fade-in-up" src={LogoLeft} />
-                <img alt="logo-half" className="logo-half fade-in-up" src={LogoRight} />
+						<div className="inner banner-container">
+              <span className="logo-container animated jello-hover">
+                <img alt="logo-half" className="logo-half animated fadeInUp delay-1s" src={LogoLeft} />
+                <img alt="logo-half" className="logo-half animated fadeInUp delay-05s" src={LogoRight} />
               </span>
 
-              <span className="fade-in">
+              <span className="animated fadeIn delay-2s">
                 <img alt="logo-title" className="logo-title" src={LogoTitle} />
                 <h1 className="catch-phrase">{t('catchPhrase')}</h1>
               </span>
@@ -55,8 +51,6 @@ class HomePage extends React.Component {
 
 				{/* <!-- Wrapper --> */}
 					<section id="wrapper">
-
-						{/* <!-- One --> */}
 							<section id="one" className="wrapper spotlight style1">
 								<div className="inner">
 									<a href="#" className="image home-image"><img src={home1} alt="" /></a>
@@ -68,7 +62,6 @@ class HomePage extends React.Component {
 								</div>
 							</section>
 
-						{/* <!-- Two --> */}
 							<section id="two" className="wrapper alt spotlight style2 flat-bottom">
 								<div className="inner">
 									<a href="#" className="image home-image"><img src={home2} alt="" /></a>
@@ -78,17 +71,6 @@ class HomePage extends React.Component {
 									</div>
 								</div>
 							</section>
-
-						{/* <!-- Three --> */}
-							{/* <section id="three" className="wrapper spotlight style3">
-								<div className="inner">
-									<a href="#" className="image"><img src={home2} alt="" /></a>
-									<div className="content">
-										<h2 className="major">{t('WhatWeDoTitle')}</h2>
-										<p>{t('WhatWeDoText')}</p>
-									</div>
-								</div>
-							</section> */}
 					</section>
 
 				{/* <!-- Footer --> */}

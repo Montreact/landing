@@ -1,12 +1,10 @@
 import React from 'react';
-import i18n from "i18next";
 import { withTranslation } from 'react-i18next';
+import alex from '../images/alex.jpeg';
+import mick from '../images/mick.jpeg';
 var _ = require('lodash');
 
-import home1 from '../images/home1.jpg';
-import home2 from '../images/home2.jpg';
-
-class Account extends React.Component {
+class Team extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -16,43 +14,77 @@ class Account extends React.Component {
     const t = this.props.t;    
     const user = this.props.user;   
     return (
-			<div id="page-wrapper account-page">
+			<div id="page-wrapper">
 
-          {/* <!-- Wrapper --> */}
-					<section id="wrapper">
-
-						{/* <!-- Content --> */}
-							<div className="wrapper account-wrapper">
-								<div className="inner">
-
-                  <img src={_.get(user, 'picture.data.url')} alt="" ></img>
-
-                  <h3 className="major">{'Welcome, ' + _.get(user, 'name')}</h3>
-									<p>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
-
-									<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
-
-									<section className="features">
-										<article>
-											<a href="#" className="image"><img src={home1} alt="" /></a>
-											<h3 className="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-										</article>
-									</section>
-
-								</div>
-							</div>
-
-					</section>
-
-				{/* <!-- Footer --> */}
-					<section id="footer">
-
-            <div className="inner">
-              <ul className="copyright">
-                <li>&copy; Montreact</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-              </ul>
+        {/* <!-- Wrapper --> */}
+        <section id="wrapper">
+            <div className="wrapper team-wrapper">
+              <div className="inner">
+                <h3 className="major">{t('Welcome')} {_.get(user, 'name')}</h3>
+                <p>{t('OurTeam')}</p>
+                <h3 className="major">{t('MeetTheFounders')}</h3>
+                <section className="features">
+                  <article>
+                    <a href="/alexviapiano" className="image"><img src={alex} alt="" /></a>
+                    <h3 className="major">Alex Viapiano</h3>
+                    <p>React Developer</p>
+                  </article>
+                  <article>
+                    <a href="#" className="image"><img src={mick} alt="" /></a>
+                    <h3 className="major">Mickael Gange</h3>
+                    <p>React Developer</p>
+                  </article>
+                </section>
+              </div>
             </div>
+        </section>
+
+        {/* <!-- Footer --> */}
+        <section id="footer">
+          <div className="inner">
+
+            <h2 className="major">
+              <AnimatedCoffee />
+              <br></br>
+              <div className="coffee-text">{t('Coffee')}</div>
+            </h2>
+
+            <form method="post" action="https://formspree.io/montreact@gmail.com">
+              <div className="fields">
+                <div className="field">
+                  <label htmlFor="name">Name</label>
+                  <input type="text" name="name" id="name" />
+                </div>
+                <div className="field">
+                  <label htmlFor="email">Email</label>
+                  <input type="email" name="email" id="email" />
+                </div>
+                <div className="field">
+                  <label htmlFor="message">Message</label>
+                  <textarea name="message" id="message" rows="4"></textarea>
+                </div>
+              </div>
+              <ul className="actions">
+                <li><input type="submit" value="Send Message" /></li>
+              </ul>
+            </form>
+
+            <ul className="contact">
+              <li className="btn-purple"><a href="mailto:hey@montreact.com"><i className="fa fa-envelope"/>hey@montreact.com</a></li>
+              <li className="btn-purple"><a href="https://ca.linkedin.com/company/montreact"><i className="fa fa-linkedin"/>LinkedIn</a></li> 
+              <li className="btn-purple"><a href="https://www.facebook.com/Montreact"><i className="fa fa-facebook"/>Facebook</a></li> 
+            </ul>
+
+            <ul className="copyright">
+              <li>&copy; Montreact</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+          </div>
+
+          <div className="inner">
+            <ul className="copyright">
+              <li>&copy; Montreact</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+          </div>
 
         </section>
 			</div>
@@ -100,5 +132,5 @@ class AnimatedCoffee extends React.Component {
   }
 }
 
-export default withTranslation()(Account);
+export default withTranslation()(Team);
 

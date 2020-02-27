@@ -1,5 +1,4 @@
 import React from 'react';
-import i18n from "i18next";
 import { withTranslation } from 'react-i18next';
 
 import home1 from '../images/home1.jpg';
