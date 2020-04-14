@@ -19,9 +19,11 @@ import pic06 from '../images/apps/pic06.jpg';
 import pic07 from '../images/apps/pic07.jpg';
 import pic08 from '../images/apps/pic08.jpg';
 import pic09 from '../images/apps/pic09.jpg';
-import pic10 from '../images/apps/pic15.jpg';
-import pic11 from '../images/apps/pic16.jpg';
-import pic12 from '../images/apps/pic17.jpg';
+import pic10 from '../images/apps/pic10.jpg';
+import pic11 from '../images/apps/pic11.jpg';
+import pic12 from '../images/apps/pic12.jpg';
+import pic13 from '../images/apps/pic13.jpg';
+import pic14 from '../images/apps/pic14.jpg';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -154,12 +156,12 @@ class HomePage extends React.Component {
                       <span>Biscotti Diana</span>
                     </a>
 
-                    <a href="https://alexviapiano.github.io/Aplus/" target="_blank" className="app">
+                    <a href="https://www.apluspaintandvarnish.ca" target="_blank" className="app">
                       <img src={pic12} alt="" />
                       <span>A Plus</span>
                     </a>
 
-                    <a href="https://www.greenroomchannel.com" target="_blank" className="app">
+                    <a href="http://www.greenroomchannel.com" target="_blank" className="app">
                       <img src={pic03} alt="" />
                       <span>The Green Room</span>
                     </a>
@@ -177,6 +179,16 @@ class HomePage extends React.Component {
                     <a href="https://alexviapiano.github.io/CondosCiteAvenirLaval/" target="_blank" className="app">
                       <img src={pic02} alt="" />
                       <span>Condo Cite Avenir</span>
+                    </a>
+
+                    <a href="http://lbfinancialgroup.ca/" target="_blank" className="app">
+                      <img src={pic13} alt="" />
+                      <span>LB Financial Group</span>
+                    </a>
+
+                    <a href="https://www.legroupedambrosio.com/" target="_blank" className="app">
+                      <img src={pic14} alt="" />
+                      <span>Le Groupe Dambrosio</span>
                     </a>
 
                 </div>
