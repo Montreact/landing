@@ -24,6 +24,7 @@ import pic11 from '../images/apps/pic11.jpg';
 import pic12 from '../images/apps/pic12.jpg';
 import pic13 from '../images/apps/pic13.jpg';
 import pic14 from '../images/apps/pic14.jpg';
+import pic15 from '../images/apps/pic15.jpg';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -189,6 +190,11 @@ class HomePage extends React.Component {
                     <a href="https://www.legroupedambrosio.com/" target="_blank" className="app">
                       <img src={pic14} alt="" />
                       <span>Le Groupe Dambrosio</span>
+                    </a>
+
+                    <a href="https://www.legroupedambrosio.com/" target="_blank" className="app">
+                      <img src={pic15} alt="" />
+                      <span>Sanitized Pro</span>
                     </a>
 
                 </div>
