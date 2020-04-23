@@ -23,17 +23,15 @@ class Nav extends React.Component {
         const t = this.props.t; 
         const user = this.props.user;   
         const cart = this.props.cart;
-        console.log(_.get(cart, 'total_items'));
         return (
             <header id="header" className="nav-bar animated fadeInDown delay-2s">
                 <a className="nav-title-container" href="#">
                     <img alt="logo-title" className="nav-title" src={LogoTitle} />
-                    {/* <img alt="logo-title" style={{display: 'none'}} className="nav-title-small" src={LogoTitleSmall} /> */}
                 </a>
 
                 <nav>
-                    { _.get(cart, 'total_items') > 0 &&
-                        <Tippy className="cart-container" boundary="window" placement="bottom-start" trigger="click" interactive arrow={false} content={
+                    { _.get(cart, 'total_items') > 0 ?
+                        <Tippy className="cart-container" boundary="window" showOnCreate placement="bottom-start" trigger="click" interactive arrow={false} content={
                             <div className="cart">
                                 <p><u>Shopping Cart:</u></p>
                                 <ul className="cart-items">
@@ -52,6 +50,8 @@ class Nav extends React.Component {
                         }>
                             <a><i className="fa fa-shopping-cart"/>{cart.total_items}</a>
                         </Tippy>
+                        :
+                        <a href="#store">Store</a>
                     }
 
                     <a href="mailto:hey@montreact.com">{t('letsTalk')}</a>

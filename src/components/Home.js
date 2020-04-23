@@ -10,6 +10,9 @@ import ToolBoxLogoReactNative from '../images/toolbox/react-native.png';
 import ToolBoxLogoRedux from '../images/toolbox/redux_solo.png';
 import ToolBoxLogoExpoIO from '../images/toolbox/expo_solo.png';
 import ToolBoxLogoSASS from '../images/toolbox/sass.png';
+import ToolBoxLogoFacebook from '../images/toolbox/facebook.png';
+import ToolBoxLogoStrapi from '../images/toolbox/strapi.png';
+import ToolBoxLogoChec from '../images/toolbox/chec.png';
 import pic01 from '../images/apps/pic01.jpg';
 import pic02 from '../images/apps/pic02.jpg';
 import pic03 from '../images/apps/pic03.jpg';
@@ -107,10 +110,28 @@ class HomePage extends React.Component {
                   <p>Expo</p>
                 </li>
                 <li className="tool">
+                  <a target="_blank" href="www.facebook.com">
+                    <img alt="sass-logo" width="160" src={ToolBoxLogoFacebook} />
+                  </a>
+                  <p>Facebook</p>
+                </li>   
+                <li className="tool">
                   <a target="_blank" href="https://sass-lang.com/">
                     <img alt="sass-logo" width="160" src={ToolBoxLogoSASS} />
                   </a>
                   <p>Syntactically Awesome<br /> Style Sheets</p>
+                </li>
+                <li className="tool">
+                  <a target="_blank" href="https://strapi.io/">
+                    <img alt="sass-logo" width="160" src={ToolBoxLogoStrapi} />
+                  </a>
+                  <p>Strapi</p>
+                </li>                             
+                <li className="tool">
+                  <a target="_blank" href="https://commercejs.com/merchants/">
+                    <img alt="sass-logo" width="160" src={ToolBoxLogoChec} />
+                  </a>
+                  <p>Chec</p>
                 </li>
               </ul>
             </div>

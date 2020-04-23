@@ -102,7 +102,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.cart)
     return (
       <HashRouter>
         <Nav login={this.login} logout={this.logout} user={this.state.user} cart={this.state.cart} emptyCart={this.emptyCart} removeItem={this.removeItem} /> 

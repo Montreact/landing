@@ -18,7 +18,9 @@ class Store extends React.Component {
         <section id="wrapper" className="store">
             <div className="wrapper team-wrapper">
               <div className="inner">
-                <h3 className="major">Welcome to our fake ecommerce store</h3>
+                <h3 className="major">Welcome to our example e-commerce store built with                   
+                  <a target="_blank" href="https://commercejs.com/merchants/"> Chec</a>
+                </h3>
 
                 <section className="features">
                   { products && products.map((product) => {
@@ -26,16 +28,9 @@ class Store extends React.Component {
                       <article>
                         <div className="image"><img src={product.media.source} alt="" /></div>
                         <h3 className="major">{product.name}</h3>
-                        <div style={{margin: '0px'}} dangerouslySetInnerHTML={{ __html: _.get(product, 'description') }} />
+                        <div className="dangerousHTML" dangerouslySetInnerHTML={{ __html: _.get(product, 'description') }} />
                         Price: {_.get(product, 'price.formatted_with_symbol')}
-                        <br></br>
-                        
-                        <br></br>
-                        <center>
-                          <a className="btn-purple" href={_.get(product, 'checkout_url.checkout')}>BUY NOW</a>
-                        </center>
-
-                        <br></br>
+                        <br></br><br></br>
                         <center>
                           <div className="btn-purple" onClick={() => this.props.addToCart(product)}>ADD TO CART</div>
                         </center>
