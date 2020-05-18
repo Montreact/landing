@@ -30,10 +30,10 @@ class Nav extends React.Component {
                 </a>
 
                 <nav>
-                    { _.get(cart, 'total_items') > 0 ?
+                    { _.get(cart, 'total_items') > 0 &&
                         <Tippy className="cart-container" boundary="window" showOnCreate placement="bottom-start" trigger="click" interactive arrow={false} content={
                             <div className="cart">
-                                <p><u>Shopping Cart:</u></p>
+                                <p><u>{t('ShoppingCart')}:</u></p>
                                 <ul className="cart-items">
                                     { _.map(cart.line_items, line_item => (
                                         <li key={line_item.id}>
@@ -50,8 +50,6 @@ class Nav extends React.Component {
                         }>
                             <a><i className="fa fa-shopping-cart"/>{cart.total_items}</a>
                         </Tippy>
-                        :
-                        <a href="#store">Store</a>
                     }
 
                     <a href="mailto:hey@montreact.com">{t('letsTalk')}</a>
@@ -61,8 +59,9 @@ class Nav extends React.Component {
                         :
                         <Tippy className="user-dropdown-container" boundary="window" placement="bottom-start" trigger="click" interactive arrow={false} content={
                             <div className="user-dropdown">
-                                <a href="#team">Our Team</a> 
+                                <a href="#store">Store</a>
                                 <a href="https://fb.com/book/Montreact/">Appointment</a>
+                                <a href="#team">Our Team</a> 
                                 <a onClick={this.props.logout}>Logout</a>
                             </div>
                         }>

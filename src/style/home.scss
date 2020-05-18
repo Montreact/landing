@@ -243,6 +243,7 @@ body {
 			justify-content: space-around;
 			flex-wrap: wrap;
 			list-style: none;
+			max-width: 1000px;
 
         	.tool {
 				margin: 15px;
@@ -252,10 +253,11 @@ body {
 				}
 			}
 
-			.sass {
-				p {
-					font-size: 12px;
-				}
+			.small-text {
+				font-size: 16px;
+				width: 125px;
+				margin-left: auto;
+				margin-right: auto;
 			}
 			
 			p {

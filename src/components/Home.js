@@ -28,11 +28,15 @@ import pic12 from '../images/apps/pic12.jpg';
 import pic13 from '../images/apps/pic13.jpg';
 import pic14 from '../images/apps/pic14.jpg';
 import pic15 from '../images/apps/pic15.jpg';
+import pic16 from '../images/apps/pic16.jpg';
+import pic17 from '../images/apps/pic17.jpg';
 
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      displayMoreApps: false
+    };
   }
 
   render() {
@@ -59,18 +63,17 @@ class HomePage extends React.Component {
 					<section id="wrapper">
 							<section id="one" className="wrapper spotlight style1">
 								<div className="inner">
-									<a href="#" className="image home-image"><img src={home1} alt="" /></a>
+									<a href="#" className="image home-image"><img src={home1} alt="React Developpers" /></a>
 									<div className="content">
 										<h2 className="major">{t('WhoAreWeTitle')}</h2>
 										<p>{t('WhoAreWeText')}</p>
-										{/* <a href="#" className="special">Learn more</a> */}
 									</div>
 								</div>
 							</section>
 
 							<section id="two" className="wrapper alt spotlight style2 flat-bottom">
 								<div className="inner">
-									<a href="#" className="image home-image"><img src={home2} alt="" /></a>
+									<a href="#" className="image home-image"><img src={home2} alt="React Developpers" /></a>
 									<div className="content">
 										<h2 className="major">{t('WhatWeDoTitle')}</h2>
 										<p>{t('WhatWeDoText')}</p>
@@ -111,7 +114,7 @@ class HomePage extends React.Component {
                 </li>
                 <li className="tool">
                   <a target="_blank" href="www.facebook.com">
-                    <img alt="sass-logo" width="160" src={ToolBoxLogoFacebook} />
+                    <img alt="facebook-logo" width="160" src={ToolBoxLogoFacebook} />
                   </a>
                   <p>Facebook</p>
                 </li>   
@@ -119,17 +122,17 @@ class HomePage extends React.Component {
                   <a target="_blank" href="https://sass-lang.com/">
                     <img alt="sass-logo" width="160" src={ToolBoxLogoSASS} />
                   </a>
-                  <p>Syntactically Awesome<br /> Style Sheets</p>
+                  <p class="small-text">Syntactically Awesome<br /> Style Sheets</p>
                 </li>
                 <li className="tool">
                   <a target="_blank" href="https://strapi.io/">
-                    <img alt="sass-logo" width="160" src={ToolBoxLogoStrapi} />
+                    <img alt="strapi-logo" width="160" src={ToolBoxLogoStrapi} />
                   </a>
                   <p>Strapi</p>
                 </li>                             
                 <li className="tool">
                   <a target="_blank" href="https://commercejs.com/merchants/">
-                    <img alt="sass-logo" width="160" src={ToolBoxLogoChec} />
+                    <img alt="chec-logo" width="160" src={ToolBoxLogoChec} />
                   </a>
                   <p>Chec</p>
                 </li>
@@ -144,81 +147,97 @@ class HomePage extends React.Component {
               <div className="apps">
                 <div className="app-section">
                     <a href="https://itunes.apple.com/ca/app/gorendezvous/id1353526648?mt=8" target="_blank" className="app">
-                      <img src={pic07} alt="" />
+                      <img src={pic07} alt="GOrendezvous mobile app" />
                       <span>GOrendezvous (iOS)</span>
                     </a>
 
+                    <a href="https://www.sanitizedpro.com/" target="_blank" className="app">
+                      <img src={pic15} alt="COVID-19" />
+                      <span>Sanitized Pro</span>
+                    </a>
+
                     <a href="https://developer.cerence.com/#/login" target="_blank" className="app">
-                      <img src={pic11} alt="" />
+                      <img src={pic11} alt="Speech and natural language tools" />
                       <span>MIX</span>
                     </a>
 
                     <a href="https://www.luvi.ca" target="_blank" className="app">
-                      <img src={pic05} alt="" />
+                      <img src={pic05} alt="Hair Stylist" />
                       <span>LUVI</span>
                     </a>
 
-                    <a href="https://nitebite.herokuapp.com/" target="_blank" className="app">
-                      <img src={pic09} alt="" />
-                      <span>Nite Bites</span>
-                    </a>
-
                     <a href="http://www.ambitionfunds.org/" target="_blank" className="app" >
-                      <img src={pic10} alt="" />
+                      <img src={pic10} alt="Mutual Fund" />
                       <span>Ambition Funds</span>
-                    </a>
- 
-                    <a href="https://www.groupeatlanta.ca" target="_blank" className="app" >
-                      <img src={pic01} alt="" />
-                      <span>Groupe Atlanta</span>
                     </a>
 
                     <a href="https://biscottidiana.ca/" target="_blank" className="app">
-                      <img src={pic06} alt="" />
+                      <img src={pic06} alt="Gluten Free Food" />
                       <span>Biscotti Diana</span>
                     </a>
 
-                    <a href="https://www.apluspaintandvarnish.ca" target="_blank" className="app">
-                      <img src={pic12} alt="" />
-                      <span>A Plus</span>
-                    </a>
-
-                    <a href="http://www.greenroomchannel.com" target="_blank" className="app">
-                      <img src={pic03} alt="" />
-                      <span>The Green Room</span>
-                    </a>
-
-                    <a href="https://play.google.com/store/apps/details?id=com.gorendezvous.mobile" target="_blank" className="app">
-                      <img src={pic08} alt="" />
-                      <span>GOrendezvous (Android)</span>
-                    </a>
-
-                    <a href="http://www.emtex.ca/" target="_blank" className="app">
-                      <img src={pic04} alt="" />
-                      <span>Emtex</span>
+                    <a href="https://www.groupeatlanta.ca" target="_blank" className="app" >
+                      <img src={pic01} alt="Windows and Doors" />
+                      <span>Groupe Atlanta</span>
                     </a>
 
                     <a href="https://alexviapiano.github.io/CondosCiteAvenirLaval/" target="_blank" className="app">
-                      <img src={pic02} alt="" />
+                      <img src={pic02} alt="Condo" />
                       <span>Condo Cite Avenir</span>
                     </a>
 
-                    <a href="http://lbfinancialgroup.ca/" target="_blank" className="app">
-                      <img src={pic13} alt="" />
-                      <span>LB Financial Group</span>
+                    <a href="https://alexviapiano.github.io/Boxing/" target="_blank" className="app animated fadeIn ">
+                      <img src={pic17} alt="Boxing" />
+                      <span>Ludus Boxing</span>
                     </a>
 
-                    <a href="https://www.legroupedambrosio.com/" target="_blank" className="app">
-                      <img src={pic14} alt="" />
+                    <a href="http://glutenafoods.com/" target="_blank" className="app animated fadeIn ">
+                      <img src={pic16} alt="Organic Vegan Food" />
+                      <span>Glutena Foods</span>
+                    </a>
+
+                    <a href="https://www.legroupedambrosio.com/" target="_blank" className="app animated fadeIn ">
+                      <img src={pic14} alt="Landscaping" />
                       <span>Le Groupe Dambrosio</span>
                     </a>
 
-                    <a href="https://www.legroupedambrosio.com/" target="_blank" className="app">
-                      <img src={pic15} alt="" />
-                      <span>Sanitized Pro</span>
+                    <a href="https://www.apluspaintandvarnish.ca" target="_blank" className="app animated fadeIn ">
+                      <img src={pic12} alt="Painting" />
+                      <span>A Plus</span>
                     </a>
 
+                    { this.state.displayMoreApps &&
+                      <React.Fragment>
+
+                        <a href="https://nitebite.herokuapp.com/" target="_blank" className="app animated fadeIn ">
+                          <img src={pic09} alt="Snack Finder" />
+                          <span>Nite Bites</span>
+                        </a>
+
+                        <a href="http://www.emtex.ca/" target="_blank" className="app animated fadeIn ">
+                          <img src={pic04} alt="Textiles" />
+                          <span>Emtex</span>
+                        </a>
+    
+                        <a href="http://lbfinancialgroup.ca/" target="_blank" className="app animated fadeIn ">
+                          <img src={pic13} alt="Financial Advisor" />
+                          <span>LB Financial Group</span>
+                        </a>
+
+                        <a href="http://www.greenroomchannel.com" target="_blank" className="app animated fadeIn ">
+                          <img src={pic03} alt="Stock Trading" />
+                          <span>The Green Room</span>
+                        </a>
+
+                        <a href="https://play.google.com/store/apps/details?id=com.gorendezvous.mobile" target="_blank" className="app animated fadeIn ">
+                          <img src={pic08} alt="GOrodenzvous mobile app" />
+                          <span>GOrendezvous (Android)</span>
+                        </a>
+                      </React.Fragment>
+                      
+                    }
                 </div>
+                { !this.state.displayMoreApps && <div onClick={() => this.setState({displayMoreApps: true})} class="button">More</div> }
               </div>
             </div>
 
@@ -268,7 +287,9 @@ class HomePage extends React.Component {
 class AnimatedCoffee extends React.Component {
   render() {
     return (
-      <div
+      <a
+        href="https://alexviapiano.github.io/SuperMario/"
+        target="_blank"
         className="animated-coffee"
         dangerouslySetInnerHTML={{
           __html: `
