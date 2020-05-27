@@ -52,7 +52,7 @@ class Nav extends React.Component {
                         </Tippy>
                     }
 
-                    <a href="mailto:hey@montreact.com">{t('letsTalk')}</a>
+                    <a href="mailto:montreact@gmail.com">{t('letsTalk')}</a>
                     <a onClick={() => this.onLocaleToggle(localeToggle)} onKeyDown={() => this.onLocaleToggle(localeToggle)}>{localeToggle}</a>
                     { _.isEmpty(user) ? 
                        <a onClick={() => this.props.login()}>Login</a> 

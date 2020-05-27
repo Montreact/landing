@@ -30,12 +30,16 @@ import pic14 from '../images/apps/pic14.jpg';
 import pic15 from '../images/apps/pic15.jpg';
 import pic16 from '../images/apps/pic16.jpg';
 import pic17 from '../images/apps/pic17.jpg';
+import pic18 from '../images/apps/pic18.jpg';
+import pic19 from '../images/apps/pic19.jpg';
+import pic20 from '../images/apps/pic20.jpg';
 
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayMoreApps: false
+      displayMoreApps: false,
+      displayMoreTools: false
     };
   }
 
@@ -112,31 +116,36 @@ class HomePage extends React.Component {
                   </a>
                   <p>Expo</p>
                 </li>
-                <li className="tool">
-                  <a target="_blank" href="www.facebook.com">
-                    <img alt="facebook-logo" width="160" src={ToolBoxLogoFacebook} />
-                  </a>
-                  <p>Facebook</p>
-                </li>   
-                <li className="tool">
-                  <a target="_blank" href="https://sass-lang.com/">
-                    <img alt="sass-logo" width="160" src={ToolBoxLogoSASS} />
-                  </a>
-                  <p class="small-text">Syntactically Awesome<br /> Style Sheets</p>
-                </li>
-                <li className="tool">
-                  <a target="_blank" href="https://strapi.io/">
-                    <img alt="strapi-logo" width="160" src={ToolBoxLogoStrapi} />
-                  </a>
-                  <p>Strapi</p>
-                </li>                             
-                <li className="tool">
-                  <a target="_blank" href="https://commercejs.com/merchants/">
-                    <img alt="chec-logo" width="160" src={ToolBoxLogoChec} />
-                  </a>
-                  <p>Chec</p>
-                </li>
+                { this.state.displayMoreTools &&
+                  <React.Fragment>
+                    <li className="tool animated fadeIn">
+                      <a target="_blank" href="www.facebook.com">
+                        <img alt="facebook-logo" width="160" src={ToolBoxLogoFacebook} />
+                      </a>
+                      <p>Facebook</p>
+                    </li>   
+                    <li className="tool animated fadeIn">
+                      <a target="_blank" href="https://sass-lang.com/">
+                        <img alt="sass-logo" width="160" src={ToolBoxLogoSASS} />
+                      </a>
+                      <p class="small-text">Syntactically Awesome<br /> Style Sheets</p>
+                    </li>
+                    <li className="tool animated fadeIn">
+                      <a target="_blank" href="https://strapi.io/">
+                        <img alt="strapi-logo" width="160" src={ToolBoxLogoStrapi} />
+                      </a>
+                      <p>Strapi</p>
+                    </li>                             
+                    <li className="tool animated fadeIn">
+                      <a target="_blank" href="https://commercejs.com/merchants/">
+                        <img alt="chec-logo" width="160" src={ToolBoxLogoChec} />
+                      </a>
+                      <p>Chec</p>
+                    </li>
+                  </React.Fragment>
+                }
               </ul>
+              { !this.state.displayMoreTools && <div onClick={() => this.setState({displayMoreTools: true})} class="button">More</div> }
             </div>
 
             <div className="portfolio section">
@@ -233,6 +242,21 @@ class HomePage extends React.Component {
                           <img src={pic08} alt="GOrodenzvous mobile app" />
                           <span>GOrendezvous (Android)</span>
                         </a>
+
+                        <a href="https://www.omfconstruction.com/" target="_blank" className="app animated fadeIn ">
+                          <img src={pic18} alt="Construction Company" />
+                          <span>OMF Construction</span>
+                        </a>
+
+                        <a href="www.lesroisdesinfectants.ca" target="_blank" className="app animated fadeIn ">
+                          <img src={pic19} alt="Disinfectant and Cleaning" />
+                          <span>Les Rois Des Infectants</span>
+                        </a>
+
+                        <a href="https://www.medvie.ca/" target="_blank" className="app animated fadeIn ">
+                          <img src={pic20} alt="Medical Equipement Distributor" />
+                          <span>Medvie</span>
+                        </a>
                       </React.Fragment>
                       
                     }
@@ -268,7 +292,7 @@ class HomePage extends React.Component {
                 </ul>
               </form>
               <ul className="contact">
-                <li className="btn-purple"><a href="mailto:hey@montreact.com"><i className="fa fa-envelope"/>hey@montreact.com</a></li>
+                <li className="btn-purple"><a href="mailto:montreact@gmail.com"><i className="fa fa-envelope"/>montreact@gmail.com</a></li>
                 <li className="btn-purple"><a href="https://ca.linkedin.com/company/montreact"><i className="fa fa-linkedin"/>LinkedIn</a></li> 
                 <li className="btn-purple"><a href="https://www.facebook.com/Montreact"><i className="fa fa-facebook"/>Facebook</a></li> 
               </ul>
