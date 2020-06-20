@@ -33,6 +33,7 @@ import pic17 from '../images/apps/pic17.jpg';
 import pic18 from '../images/apps/pic18.jpg';
 import pic19 from '../images/apps/pic19.jpg';
 import pic20 from '../images/apps/pic20.jpg';
+import pic21 from '../images/apps/pic21.jpg';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -207,9 +208,14 @@ class HomePage extends React.Component {
                   <span>Condo Cite Avenir</span>
                 </a>
 
-                <a href='https://alexviapiano.github.io/Boxing/' target='_blank' className='app'>
-                  <img src={pic17} alt='Boxing' />
-                  <span>Ludus Boxing</span>
+                <a
+                  href='https://www.instagram.com/p/CBWZxAvjXom/'
+                  target='_blank'
+                  className='app'
+                  onClick={() => this.setState({ displayVideo: !this.state.displayVideo })}
+                >
+                  <img src={pic21} alt='Covid-19 Screening' />
+                  <span>Covid-19 Screening</span>
                 </a>
 
                 <a href='http://glutenafoods.com/' target='_blank' className='app'>
@@ -266,6 +272,11 @@ class HomePage extends React.Component {
                     <a href='https://www.luvi.ca' target='_blank' className='app animated fadeIn'>
                       <img src={pic05} alt='Hair Stylist' />
                       <span>LUVI</span>
+                    </a>
+
+                    <a href='https://alexviapiano.github.io/Boxing/' target='_blank' className='app'>
+                      <img src={pic17} alt='Boxing' />
+                      <span>Ludus Boxing</span>
                     </a>
                   </React.Fragment>
                 )}
