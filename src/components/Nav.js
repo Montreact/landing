@@ -77,7 +77,7 @@ class Nav extends React.Component {
             {localeToggle}
           </a>
           {_.isEmpty(user) ? (
-            <a onClick={() => this.props.login()}>Login</a>
+            <a onClick={() => this.props.login()}>{t('Login')}</a>
           ) : (
             <Tippy
               className='user-dropdown-container'

@@ -20,5 +20,10 @@
   "OurTeam": "Vous recherchez un partenaire de confiance pour vous aider dans votre projet ReactJS? Notre équipe de développement ReactJS travaille avec nos clients pour créer des solutions logicielles de qualité dans de nombreux secteurs, comme la santé, la finance, la construction, l'immobilier, etc. Si vous avez une nouvelle idée de produit ou souhaitez agrandir votre équipe, nous sommes là pour vous aider à atteindre vos objectifs.",
   "MeetTheFounders": "Rencontrez les fondateurs",
   "ShoppingCard": "Panier",
-  "More": "Plus"
+  "More": "Plus",
+  "Login": "Connexion",
+  "Name": "Nom",
+  "Email": "Courriel",
+  "Message": "Message",
+  "Send": "Envoyer"
 }

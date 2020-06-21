@@ -153,7 +153,7 @@ class HomePage extends React.Component {
             </ul>
             {!this.state.displayMoreTools && (
               <div onClick={() => this.setState({ displayMoreTools: true })} class='button'>
-                More
+                {t('More')}
               </div>
             )}
           </div>
@@ -283,7 +283,7 @@ class HomePage extends React.Component {
               </div>
               {!this.state.displayMoreApps && (
                 <div onClick={() => this.setState({ displayMoreApps: true })} class='button'>
-                  More
+                  {t('More')}
                 </div>
               )}
             </div>
@@ -299,21 +299,21 @@ class HomePage extends React.Component {
             <form method='post' action='https://formspree.io/montreact@gmail.com'>
               <div className='fields'>
                 <div className='field'>
-                  <label htmlFor='name'>Name</label>
+                  <label htmlFor='name'>{t('Name')}</label>
                   <input type='text' name='name' id='name' />
                 </div>
                 <div className='field'>
-                  <label htmlFor='email'>Email</label>
+                  <label htmlFor='email'>{t('Email')}</label>
                   <input type='email' name='email' id='email' />
                 </div>
                 <div className='field'>
-                  <label htmlFor='message'>Message</label>
+                  <label htmlFor='message'>{t('Message')}</label>
                   <textarea name='message' id='message' rows='4'></textarea>
                 </div>
               </div>
               <ul className='actions'>
                 <li>
-                  <input type='submit' value='Send Message' />
+                  <input type='submit' value={t('Send')} />
                 </li>
               </ul>
             </form>
