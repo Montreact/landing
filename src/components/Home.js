@@ -91,7 +91,7 @@ class HomePage extends React.Component {
         </section>
 
         {/* <!-- Footer --> */}
-        <section id='footer'>
+        <section id='footer' className='footer-home'>
           <div className='toolbox section'>
             <h1>{t('Expertise')}</h1>
             <ul>
@@ -185,7 +185,7 @@ class HomePage extends React.Component {
 
                 <a href='https://developer.cerence.com/#/login' target='_blank' className='app'>
                   <img src={pic11} alt='Speech and natural language tools' />
-                  <span>MIX</span>
+                  <span>Nuance Mix</span>
                 </a>
 
                 <a href='http://www.ambitionfunds.org/' target='_blank' className='app'>
@@ -209,7 +209,7 @@ class HomePage extends React.Component {
                 </a>
 
                 <a
-                  href='https://www.instagram.com/p/CBWZxAvjXom/'
+                  href='https://www.instagram.com/stories/montreact/2335863921305335297/?hl=en'
                   target='_blank'
                   className='app'
                   onClick={() => this.setState({ displayVideo: !this.state.displayVideo })}
@@ -319,9 +319,15 @@ class HomePage extends React.Component {
             </form>
             <ul className='contact'>
               <li className='btn-purple'>
-                <a href='mailto:montreact@gmail.com'>
-                  <i className='fa fa-envelope' />
-                  montreact@gmail.com
+                <a href='https://www.instagram.com/montreact/?hl=en'>
+                  <i className='fa fa-instagram' />
+                  Instagram
+                </a>
+              </li>
+              <li className='btn-purple'>
+                <a href='https://www.facebook.com/Montreact'>
+                  <i className='fa fa-facebook' />
+                  Facebook
                 </a>
               </li>
               <li className='btn-purple'>
@@ -331,9 +337,9 @@ class HomePage extends React.Component {
                 </a>
               </li>
               <li className='btn-purple'>
-                <a href='https://www.facebook.com/Montreact'>
-                  <i className='fa fa-facebook' />
-                  Facebook
+                <a href='mailto:montreact@gmail.com'>
+                  <i className='fa fa-envelope' />
+                  Email
                 </a>
               </li>
             </ul>

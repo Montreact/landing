@@ -8,100 +8,120 @@ class Store extends React.Component {
   }
 
   render() {
-    const t = this.props.t;    
+    const t = this.props.t;
     const user = this.props.user;
     const products = this.props.products;
     return (
-			<div id="page-wrapper">
-
+      <div id='page-wrapper'>
         {/* <!-- Wrapper --> */}
-        <section id="wrapper" className="store">
-            <div className="wrapper team-wrapper">
-              <div className="inner">
-                <h3 className="major">Welcome to our example e-commerce store built with                   
-                  <a target="_blank" href="https://commercejs.com/merchants/"> Chec</a>
-                </h3>
+        <section id='wrapper' className='store'>
+          <div className='wrapper team-wrapper'>
+            <div className='inner'>
+              <h3 className='major'>
+                Welcome to our example e-commerce store built with
+                <a target='_blank' href='https://commercejs.com/merchants/'>
+                  {' '}
+                  Chec
+                </a>
+              </h3>
 
-                <section className="features">
-                  { products && products.map((product) => {
+              <section className='features'>
+                {products &&
+                  products.map(product => {
                     return (
                       <article>
-                        <div className="image"><img src={product.media.source} alt="" /></div>
-                        <h3 className="major">{product.name}</h3>
-                        <div className="dangerousHTML" dangerouslySetInnerHTML={{ __html: _.get(product, 'description') }} />
+                        <div className='image'>
+                          <img src={product.media.source} alt='' />
+                        </div>
+                        <h3 className='major'>{product.name}</h3>
+                        <div className='dangerousHTML' dangerouslySetInnerHTML={{ __html: _.get(product, 'description') }} />
                         Price: {_.get(product, 'price.formatted_with_symbol')}
-                        <br></br><br></br>
+                        <br></br>
+                        <br></br>
                         <center>
-                          <div className="btn-purple" onClick={() => this.props.addToCart(product)}>ADD TO CART</div>
+                          <div className='btn-purple' onClick={() => this.props.addToCart(product)}>
+                            ADD TO CART
+                          </div>
                         </center>
                         <br></br>
                       </article>
-                    )                                    
+                    );
                   })}
-                </section>
-              </div>
+              </section>
             </div>
+          </div>
         </section>
 
         {/* <!-- Footer --> */}
-        <section id="footer">
-          <div className="inner">
-
-            <h2 className="major">
+        <section id='footer'>
+          <div className='inner'>
+            <h2 className='major'>
               <AnimatedCoffee />
               <br></br>
-              <div className="coffee-text">{t('Coffee')}</div>
+              <div className='coffee-text'>{t('Coffee')}</div>
             </h2>
 
-            <form method="post" action="https://formspree.io/montreact@gmail.com">
-              <div className="fields">
-                <div className="field">
-                  <label htmlFor="name">Name</label>
-                  <input type="text" name="name" id="name" />
+            <form method='post' action='https://formspree.io/montreact@gmail.com'>
+              <div className='fields'>
+                <div className='field'>
+                  <label htmlFor='name'>Name</label>
+                  <input type='text' name='name' id='name' />
                 </div>
-                <div className="field">
-                  <label htmlFor="email">Email</label>
-                  <input type="email" name="email" id="email" />
+                <div className='field'>
+                  <label htmlFor='email'>Email</label>
+                  <input type='email' name='email' id='email' />
                 </div>
-                <div className="field">
-                  <label htmlFor="message">Message</label>
-                  <textarea name="message" id="message" rows="4"></textarea>
+                <div className='field'>
+                  <label htmlFor='message'>Message</label>
+                  <textarea name='message' id='message' rows='4'></textarea>
                 </div>
               </div>
-              <ul className="actions">
-                <li><input type="submit" value="Send Message" /></li>
+              <ul className='actions'>
+                <li>
+                  <input type='submit' value='Send Message' />
+                </li>
               </ul>
             </form>
 
-            <ul className="contact">
-              <li className="btn-purple"><a href="mailto:montreact@gmail.com"><i className="fa fa-envelope"/>montreact@gmail.com</a></li>
-              <li className="btn-purple"><a href="https://ca.linkedin.com/company/montreact"><i className="fa fa-linkedin"/>LinkedIn</a></li> 
-              <li className="btn-purple"><a href="https://www.facebook.com/Montreact"><i className="fa fa-facebook"/>Facebook</a></li> 
+            <ul className='contact'>
+              <li className='btn-purple'>
+                <a href='mailto:montreact@gmail.com'>
+                  <i className='fa fa-envelope' />
+                  montreact@gmail.com
+                </a>
+              </li>
+              <li className='btn-purple'>
+                <a href='https://ca.linkedin.com/company/montreact'>
+                  <i className='fa fa-linkedin' />
+                  LinkedIn
+                </a>
+              </li>
+              <li className='btn-purple'>
+                <a href='https://www.facebook.com/Montreact'>
+                  <i className='fa fa-facebook' />
+                  Facebook
+                </a>
+              </li>
             </ul>
 
-            <ul className="copyright">
-              <li>&copy; Montreact</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            <ul className='copyright'>
+              <li>&copy; Montreact</li>
+              <li>
+                Design: <a href='http://html5up.net'>HTML5 UP</a>
+              </li>
             </ul>
           </div>
-
-          <div className="inner">
-            <ul className="copyright">
-              <li>&copy; Montreact</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-            </ul>
-          </div>
-
         </section>
-			</div>
+      </div>
     );
   }
 }
-
 
 class AnimatedCoffee extends React.Component {
   render() {
     return (
       <div
-        className="animated-coffee"
+        className='animated-coffee'
         dangerouslySetInnerHTML={{
           __html: `
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; display: block;" width="91px" height="91px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
@@ -137,4 +157,3 @@ class AnimatedCoffee extends React.Component {
 }
 
 export default withTranslation()(Store);
-

@@ -11,93 +11,109 @@ class Team extends React.Component {
   }
 
   render() {
-    const t = this.props.t;    
-    const user = this.props.user;   
+    const t = this.props.t;
+    const user = this.props.user;
     return (
-			<div id="page-wrapper">
-
+      <div id='page-wrapper'>
         {/* <!-- Wrapper --> */}
-        <section id="wrapper">
-            <div className="wrapper team-wrapper">
-              <div className="inner">
-                <h3 className="major">{t('Welcome')} {_.get(user, 'name')}</h3>
-                <p>{t('OurTeam')}</p>
-                <h3 className="major">{t('MeetTheFounders')}</h3>
-                <section className="features">
-                  <article>
-                    <a href="/alexviapiano" className="image"><img src={alex} alt="" /></a>
-                    <h3 className="major">Alex Viapiano</h3>
-                    <p>React Developer</p>
-                  </article>
-                  <article>
-                    <a href="#" className="image"><img src={mick} alt="" /></a>
-                    <h3 className="major">Mickael Gange</h3>
-                    <p>React Developer</p>
-                  </article>
-                </section>
-              </div>
+        <section id='wrapper'>
+          <div className='wrapper team-wrapper'>
+            <div className='inner'>
+              <h3 className='major'>
+                {t('Welcome')} {_.get(user, 'name')}
+              </h3>
+              <p>{t('OurTeam')}</p>
+              <h3 className='major'>{t('MeetTheFounders')}</h3>
+              <section className='features'>
+                <article>
+                  <a href='/alexviapiano' className='image'>
+                    <img src={alex} alt='' />
+                  </a>
+                  <h3 className='major'>Alex Viapiano</h3>
+                  <p>React Developer</p>
+                </article>
+                <article>
+                  <a href='#' className='image'>
+                    <img src={mick} alt='' />
+                  </a>
+                  <h3 className='major'>Mickael Gange</h3>
+                  <p>React Developer</p>
+                </article>
+              </section>
             </div>
+          </div>
         </section>
 
         {/* <!-- Footer --> */}
-        <section id="footer">
-          <div className="inner">
-
-            <h2 className="major">
+        <section id='footer'>
+          <div className='inner'>
+            <h2 className='major'>
               <AnimatedCoffee />
               <br></br>
-              <div className="coffee-text">{t('Coffee')}</div>
+              <div className='coffee-text'>{t('Coffee')}</div>
             </h2>
 
-            <form method="post" action="https://formspree.io/montreact@gmail.com">
-              <div className="fields">
-                <div className="field">
-                  <label htmlFor="name">Name</label>
-                  <input type="text" name="name" id="name" />
+            <form method='post' action='https://formspree.io/montreact@gmail.com'>
+              <div className='fields'>
+                <div className='field'>
+                  <label htmlFor='name'>Name</label>
+                  <input type='text' name='name' id='name' />
                 </div>
-                <div className="field">
-                  <label htmlFor="email">Email</label>
-                  <input type="email" name="email" id="email" />
+                <div className='field'>
+                  <label htmlFor='email'>Email</label>
+                  <input type='email' name='email' id='email' />
                 </div>
-                <div className="field">
-                  <label htmlFor="message">Message</label>
-                  <textarea name="message" id="message" rows="4"></textarea>
+                <div className='field'>
+                  <label htmlFor='message'>Message</label>
+                  <textarea name='message' id='message' rows='4'></textarea>
                 </div>
               </div>
-              <ul className="actions">
-                <li><input type="submit" value="Send Message" /></li>
+              <ul className='actions'>
+                <li>
+                  <input type='submit' value='Send Message' />
+                </li>
               </ul>
             </form>
 
-            <ul className="contact">
-              <li className="btn-purple"><a href="mailto:montreact@gmail.com"><i className="fa fa-envelope"/>montreact@gmail.com</a></li>
-              <li className="btn-purple"><a href="https://ca.linkedin.com/company/montreact"><i className="fa fa-linkedin"/>LinkedIn</a></li> 
-              <li className="btn-purple"><a href="https://www.facebook.com/Montreact"><i className="fa fa-facebook"/>Facebook</a></li> 
+            <ul className='contact'>
+              <li className='btn-purple'>
+                <a href='mailto:montreact@gmail.com'>
+                  <i className='fa fa-envelope' />
+                  montreact@gmail.com
+                </a>
+              </li>
+              <li className='btn-purple'>
+                <a href='https://ca.linkedin.com/company/montreact'>
+                  <i className='fa fa-linkedin' />
+                  LinkedIn
+                </a>
+              </li>
+              <li className='btn-purple'>
+                <a href='https://www.facebook.com/Montreact'>
+                  <i className='fa fa-facebook' />
+                  Facebook
+                </a>
+              </li>
             </ul>
 
-            <ul className="copyright">
-              <li>&copy; Montreact</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            <ul className='copyright'>
+              <li>&copy; Montreact</li>
+              <li>
+                Design: <a href='http://html5up.net'>HTML5 UP</a>
+              </li>
             </ul>
           </div>
-
-          <div className="inner">
-            <ul className="copyright">
-              <li>&copy; Montreact</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-            </ul>
-          </div>
-
         </section>
-			</div>
+      </div>
     );
   }
 }
-
 
 class AnimatedCoffee extends React.Component {
   render() {
     return (
       <div
-        className="animated-coffee"
+        className='animated-coffee'
         dangerouslySetInnerHTML={{
           __html: `
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; display: block;" width="91px" height="91px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
@@ -133,4 +149,3 @@ class AnimatedCoffee extends React.Component {
 }
 
 export default withTranslation()(Team);
-
