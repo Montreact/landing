@@ -50,8 +50,6 @@ body {
 
   .section {
     min-height: 60vh;
-    // padding: 80px;
-    padding-top: 80px;
     @media (max-width: 599px) {
       padding: 110px 20px 40px 20px;
     }
@@ -228,6 +226,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-top: 125px;
 
   h1 {
     text-align: center;
@@ -250,8 +249,8 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     list-style: none;
-    max-width: 1000px;
-
+    width: 100%;
+    max-width: 880px;
     .tool {
       margin: 15px;
       &:hover {
