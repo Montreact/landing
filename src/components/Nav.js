@@ -2,7 +2,6 @@ import React from 'react';
 import i18n from 'i18next';
 import { withTranslation } from 'react-i18next';
 import LogoTitle from '../images/logo_title.png';
-import LogoTitleSmall from '../images/logo_title_small.png';
 import Tippy from '@tippy.js/react';
 import LineItem from './shopify/LineItem';
 import 'tippy.js/dist/tippy.css';

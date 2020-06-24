@@ -2,7 +2,6 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import alex from '../images/alex.jpeg';
 import mick from '../images/mick.jpeg';
-var _ = require('lodash');
 
 class Team extends React.Component {
   constructor(props) {

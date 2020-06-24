@@ -137,7 +137,7 @@ class HomePage extends React.Component {
                     <a target='_blank' href='https://sass-lang.com/'>
                       <img alt='sass-logo' width='160' src={ToolBoxLogoSASS} />
                     </a>
-                    <p class='small-text'>
+                    <p className='small-text'>
                       Syntactically Awesome
                       <br /> Style Sheets
                     </p>
@@ -152,7 +152,7 @@ class HomePage extends React.Component {
               )}
             </ul>
             {!this.state.displayMoreTools && (
-              <div onClick={() => this.setState({ displayMoreTools: true })} class='button'>
+              <div onClick={() => this.setState({ displayMoreTools: true })} className='button'>
                 {t('More')}
               </div>
             )}
@@ -282,7 +282,7 @@ class HomePage extends React.Component {
                 )}
               </div>
               {!this.state.displayMoreApps && (
-                <div onClick={() => this.setState({ displayMoreApps: true })} class='button'>
+                <div onClick={() => this.setState({ displayMoreApps: true })} className='button'>
                   {t('More')}
                 </div>
               )}

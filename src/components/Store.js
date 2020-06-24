@@ -3,7 +3,6 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import store from '../store';
 import Products from './shopify/Products';
-var _ = require('lodash');
 
 class Store extends React.Component {
   constructor(props) {

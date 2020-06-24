@@ -1,21 +1,23 @@
 import React, { Suspense, lazy } from 'react';
 import { Switch, Route, HashRouter } from 'react-router-dom';
 import './style/base.scss';
-import Nav from './components/Nav';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import { connect } from 'react-redux';
 import store from './store';
 
 const Home = lazy(() => import('./components/Home'));
-const Cart = lazy(() => import('./components/shopify/Cart'));
 const Store = lazy(() => import('./components/Store'));
 const Team = lazy(() => import('./components/Team'));
 const Generic = lazy(() => import('./components/Generic'));
 const Elements = lazy(() => import('./components/Elements'));
+const Nav = lazy(() => import('./components/Nav'));
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      user: {},
+    };
   }
 
   componentDidMount() {
