@@ -3,38 +3,22 @@ import { Switch, Route, HashRouter } from 'react-router-dom';
 import './style/base.scss';
 import Nav from './components/Nav';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
-import Commerce from '@chec/commerce.js';
+import { connect } from 'react-redux';
+import store from './store';
 
 const Home = lazy(() => import('./components/Home'));
-// const Team = lazy(() => import('./components/Team'));
-// const Store = lazy(() => import('./components/Store'));
-// const Generic = lazy(() => import('./components/Generic'));
-// const Elements = lazy(() => import('./components/Elements'));
-
-// const commerce = new Commerce('pk_1771027cff689ca2040c9c4b403a1f6fc92c8b56b688b');
+const Cart = lazy(() => import('./components/shopify/Cart'));
+const Store = lazy(() => import('./components/Store'));
+const Team = lazy(() => import('./components/Team'));
+const Generic = lazy(() => import('./components/Generic'));
+const Elements = lazy(() => import('./components/Elements'));
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      user: {},
-      products: null,
-      cart: null,
-      loadingCart: true,
-    };
-    // this.addToCart = this.addToCart.bind(this);
-    // this.fetchCart = this.fetchCart.bind(this);
-    // this.emptyCart = this.emptyCart.bind(this);
-    // this.removeItem = this.removeItem.bind(this);
   }
 
   componentDidMount() {
-    //COMMERCE.js GET CART
-    // this.fetchCart().then(() => this.setState({ loadingCart: false }));
-    // commerce.products.list().then(res => {
-    //   this.setState({ products: res.data });
-    // });
-
     window.fbAsyncInit = function () {
       FB.init({ appId: '190910228935872', cookie: true, xfbml: true, version: 'v2.1' });
 
@@ -94,35 +78,9 @@ class App extends React.Component {
     );
   };
 
-  // addToCart(product) {
-  //   commerce.cart
-  //     .add(product.id, 1)
-  //     .then(res => this.setState({ cart: res.cart }))
-  //     .catch(error => console.error('Failed to add to cart!', error));
-  // }
-
-  // fetchCart() {
-  //   return commerce.cart
-  //     .retrieve()
-  //     .then(cart => this.setState({ cart }))
-  //     .catch(error => console.error('Failed to retrieve cart!', error));
-  // }
-
-  // emptyCart() {
-  //   commerce.cart
-  //     .empty()
-  //     .then(cart => this.setState({ cart }))
-  //     .catch(error => console.error('Failed to retrieve cart!', error));
-  // }
-
-  // removeItem(line_itemId) {
-  //   commerce.cart
-  //     .remove(line_itemId)
-  //     .then(cart => this.setState({ cart }))
-  //     .catch(error => console.error('Failed to retrieve cart!', error));
-  // }
-
   render() {
+    const state = store.getState();
+
     var Loading = (
       <div
         className={'fallback-loading'}
@@ -142,26 +100,13 @@ class App extends React.Component {
     return (
       <Suspense fallback={Loading}>
         <HashRouter>
-          <Nav
-            login={this.login}
-            logout={this.logout}
-            user={this.state.user}
-            cart={this.state.cart}
-            emptyCart={this.emptyCart}
-            removeItem={this.removeItem}
-          />
+          <Nav login={this.login} logout={this.logout} />
           <Switch>
             <Route exact path='/' component={Home} />
-            {/* <Route exact path='/team' component={() => <Team user={this.state.user} />} />
-            <Route
-              exact
-              path='/store'
-              component={() => (
-                <Store user={this.state.user} commerce={commerce} addToCart={this.addToCart} products={this.state.products} />
-              )}
-            />
+            <Route exact path='/store' component={Store} />
+            <Route exact path='/team' component={() => <Team user={this.state.user}></Team>} />
             <Route exact path='/generic' component={Generic} />
-            <Route exact path='/elements' component={Elements} /> */}
+            <Route exact path='/elements' component={Elements} />
           </Switch>
           <MessengerCustomerChat pageId='105134164415024' appId='190910228935872' />
         </HashRouter>
@@ -170,4 +115,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default connect(state => state)(App);

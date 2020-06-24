@@ -4,13 +4,19 @@ import { withTranslation } from 'react-i18next';
 import LogoTitle from '../images/logo_title.png';
 import LogoTitleSmall from '../images/logo_title_small.png';
 import Tippy from '@tippy.js/react';
+import LineItem from './shopify/LineItem';
 import 'tippy.js/dist/tippy.css';
 var _ = require('lodash');
+import store from '../store';
 
 class Nav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.updateQuantityInCart = this.updateQuantityInCart.bind(this);
+    this.removeLineItemInCart = this.removeLineItemInCart.bind(this);
+    this.handleCartOpen = this.handleCartOpen.bind(this);
+    this.handleCartClose = this.handleCartClose.bind(this);
   }
 
   onLocaleToggle = locale => {
@@ -18,11 +24,45 @@ class Nav extends React.Component {
     this.forceUpdate();
   };
 
+  updateQuantityInCart(lineItemId, quantity) {
+    const state = store.getState(); // state from redux store
+    const checkoutId = state.checkout.id;
+    const lineItemsToUpdate = [{ id: lineItemId, quantity: parseInt(quantity, 10) }];
+    state.client.checkout.updateLineItems(checkoutId, lineItemsToUpdate).then(res => {
+      store.dispatch({ type: 'UPDATE_QUANTITY_IN_CART', payload: { checkout: res } });
+    });
+  }
+  removeLineItemInCart(lineItemId) {
+    const state = store.getState(); // state from redux store
+    const checkoutId = state.checkout.id;
+    state.client.checkout.removeLineItems(checkoutId, [lineItemId]).then(res => {
+      store.dispatch({ type: 'REMOVE_LINE_ITEM_IN_CART', payload: { checkout: res } });
+    });
+  }
+  handleCartClose() {
+    store.dispatch({ type: 'CLOSE_CART' });
+  }
+  handleCartOpen() {
+    store.dispatch({ type: 'OPEN_CART' });
+  }
+
   render() {
     const localeToggle = i18n.language === 'en' ? 'fr' : 'en';
     const t = this.props.t;
     const user = this.props.user;
-    const cart = this.props.cart;
+
+    const state = store.getState();
+
+    let line_items = state.checkout.lineItems.map(line_item => {
+      return (
+        <LineItem
+          updateQuantityInCart={this.updateQuantityInCart}
+          removeLineItemInCart={this.removeLineItemInCart}
+          key={line_item.id.toString()}
+          line_item={line_item}
+        />
+      );
+    });
     return (
       <header id='header' className='nav-bar animated fadeInDown delay-1s'>
         <a className='nav-title-container' href='#'>
@@ -30,7 +70,7 @@ class Nav extends React.Component {
         </a>
 
         <nav>
-          {_.get(cart, 'total_items') > 0 && (
+          {line_items.length > 0 && (
             <Tippy
               className='cart-container'
               boundary='window'
@@ -40,34 +80,44 @@ class Nav extends React.Component {
               interactive
               arrow={false}
               content={
-                <div className='cart'>
-                  <p>
-                    <u>{t('ShoppingCart')}:</u>
-                  </p>
-                  <ul className='cart-items'>
-                    {_.map(cart.line_items, line_item => (
-                      <li key={line_item.id}>
-                        <div onClick={() => this.props.removeItem(line_item.id)} className='cart-item-remove'>
-                          X
-                        </div>
-                        {line_item.name} x{line_item.quantity} @ {line_item.line_total.formatted_with_symbol}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className='cart-total'>Total: {cart.subtotal.formatted_with_symbol}</p>
-                  <a className='btn-purple' href={cart.hosted_checkout_url}>
-                    Checkout
-                  </a>
-                  <br></br>
-                  <div className='btn-purple' onClick={this.props.emptyCart}>
-                    Empty Cart
-                  </div>
+                <div className={`Cart ${state.isCartOpen ? 'Cart--open' : ''}`}>
+                  <center>
+                    <header className='Cart__header'>
+                      <h2>Your cart</h2>
+                    </header>
+                  </center>
+                  <ul className='Cart__line-items'>{line_items}</ul>
+                  <footer className='Cart__footer'>
+                    <div className='Cart-info clearfix'>
+                      <div className='Cart-info__total Cart-info__small'>Subtotal</div>
+                      <div className='Cart-info__pricing'>
+                        <span className='pricing'>$ {state.checkout.subtotalPrice}</span>
+                      </div>
+                    </div>
+                    <div className='Cart-info clearfix'>
+                      <div className='Cart-info__total Cart-info__small'>Taxes</div>
+                      <div className='Cart-info__pricing'>
+                        <span className='pricing'>$ {state.checkout.totalTax}</span>
+                      </div>
+                    </div>
+                    <div className='Cart-info clearfix'>
+                      <div className='Cart-info__total Cart-info__small'>Total</div>
+                      <div className='Cart-info__pricing'>
+                        <span className='pricing'>$ {state.checkout.totalPrice}</span>
+                      </div>
+                    </div>
+                    <center>
+                      <button className='Cart__checkout button' onClick={this.openCheckout}>
+                        Checkout
+                      </button>
+                    </center>
+                  </footer>
                 </div>
               }
             >
-              <a>
+              <a onClick={this.handleCartOpen}>
                 <i className='fa fa-shopping-cart' />
-                {cart.total_items}
+                {line_items.length}
               </a>
             </Tippy>
           )}

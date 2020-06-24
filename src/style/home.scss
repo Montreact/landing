@@ -226,7 +226,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-top: 125px;
+  padding-top: 150px;
 
   h1 {
     text-align: center;
@@ -315,6 +315,7 @@ body {
 }
 
 .portfolio {
+  padding-top: 100px;
   h1 {
     text-align: center;
     margin-bottom: 50px;
@@ -376,6 +377,48 @@ body {
           max-height: 113.25px;
         }
       }
+    }
+  }
+}
+
+.Product-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 750px;
+  img {
+    border-radius: 25px;
+  }
+}
+
+.cart-container {
+  background: linear-gradient(135deg, #3414be 0%, #7158dc99 100%);
+
+  .Cart {
+    ul {
+      list-style: none;
+      min-width: 250px;
+      margin: 0px;
+      padding: 0px;
+      li {
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .Line-item {
+      img {
+        max-height: 100px;
+      }
+      background: linear-gradient(135deg, #0a0038 0%, #7158dc99 100%);
+    }
+    .Cart-info {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 5px;
     }
   }
 }

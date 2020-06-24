@@ -108,24 +108,30 @@ class HomePage extends React.Component {
                 <p>React Native</p>
               </li>
               <li className='tool'>
-                <a target='_blank' href='https://redux.js.org/'>
-                  <img alt='redux-logo' width='160' src={ToolBoxLogoRedux} />
+                <a target='_blank' href='https://www.shopify.ca/'>
+                  <img alt='chec-logo' width='160' src={ToolBoxLogoChec} />
                 </a>
-                <p>Redux</p>
+                <p>Shopify</p>
               </li>
               <li className='tool'>
-                <a target='_blank' href='https://expo.io/'>
-                  <img alt='expo-io-logo' width='160' src={ToolBoxLogoExpoIO} />
+                <a target='_blank' href='https://www.facebook.com'>
+                  <img alt='facebook-logo' width='160' src={ToolBoxLogoFacebook} />
                 </a>
-                <p>Expo</p>
+                <p>Facebook</p>
               </li>
               {this.state.displayMoreTools && (
                 <React.Fragment>
                   <li className='tool animated fadeIn'>
-                    <a target='_blank' href='www.facebook.com'>
-                      <img alt='facebook-logo' width='160' src={ToolBoxLogoFacebook} />
+                    <a target='_blank' href='https://redux.js.org/'>
+                      <img alt='redux-logo' width='160' src={ToolBoxLogoRedux} />
                     </a>
-                    <p>Facebook</p>
+                    <p>Redux</p>
+                  </li>
+                  <li className='tool animated fadeIn'>
+                    <a target='_blank' href='https://expo.io/'>
+                      <img alt='expo-io-logo' width='160' src={ToolBoxLogoExpoIO} />
+                    </a>
+                    <p>Expo</p>
                   </li>
                   <li className='tool animated fadeIn'>
                     <a target='_blank' href='https://sass-lang.com/'>
@@ -141,12 +147,6 @@ class HomePage extends React.Component {
                       <img alt='strapi-logo' width='160' src={ToolBoxLogoStrapi} />
                     </a>
                     <p>Strapi</p>
-                  </li>
-                  <li className='tool animated fadeIn'>
-                    <a target='_blank' href='https://commercejs.com/merchants/'>
-                      <img alt='chec-logo' width='160' src={ToolBoxLogoChec} />
-                    </a>
-                    <p>Chec</p>
                   </li>
                 </React.Fragment>
               )}
@@ -218,7 +218,7 @@ class HomePage extends React.Component {
                   <span>Covid-19 Screening</span>
                 </a>
 
-                <a href='http://glutenafoods.com/' target='_blank' className='app'>
+                <a href='http://www.glutenafoods.com/' target='_blank' className='app'>
                   <img src={pic16} alt='Organic Vegan Food' />
                   <span>Glutena Foods</span>
                 </a>
