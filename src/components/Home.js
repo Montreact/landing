@@ -12,7 +12,7 @@ import ToolBoxLogoExpoIO from '../images/toolbox/expo_solo.png';
 import ToolBoxLogoSASS from '../images/toolbox/sass.png';
 import ToolBoxLogoFacebook from '../images/toolbox/facebook.png';
 import ToolBoxLogoStrapi from '../images/toolbox/strapi.png';
-import ToolBoxLogoChec from '../images/toolbox/chec.png';
+import ToolBoxLogoShopify from '../images/toolbox/shopify.png';
 import pic01 from '../images/apps/pic01.jpg';
 import pic02 from '../images/apps/pic02.jpg';
 import pic03 from '../images/apps/pic03.jpg';
@@ -47,7 +47,7 @@ class HomePage extends React.Component {
   render() {
     const t = this.props.t;
     return (
-      <div id='page-wrapper' className='animated fadeIn delay-05s'>
+      <div id='page-wrapper' className='animated fadeIn'>
         {/* <!-- Banner --> */}
         <section id='banner'>
           <div className='inner banner-container'>
@@ -56,7 +56,7 @@ class HomePage extends React.Component {
               <img alt='logo-half' className='logo-half animated fadeInUp delay-05s' src={LogoRight} />
             </span>
 
-            <span className='animated fadeIn delay-2s'>
+            <span className='animated fadeIn'>
               <img alt='logo-title' className='logo-title' src={LogoTitle} />
               <h1 className='catch-phrase'>{t('catchPhrase')}</h1>
             </span>
@@ -109,7 +109,7 @@ class HomePage extends React.Component {
               </li>
               <li className='tool'>
                 <a target='_blank' href='https://www.shopify.ca/'>
-                  <img alt='chec-logo' width='160' src={ToolBoxLogoChec} />
+                  <img alt='shopify-logo' width='160' src={ToolBoxLogoShopify} />
                 </a>
                 <p>Shopify</p>
               </li>
@@ -215,7 +215,7 @@ class HomePage extends React.Component {
                   onClick={() => this.setState({ displayVideo: !this.state.displayVideo })}
                 >
                   <img src={pic21} alt='Covid-19 Screening' />
-                  <span>Covid-19 Screening</span>
+                  <span>Covid-19 Screening (iOS/Android)</span>
                 </a>
 
                 <a href='http://www.glutenafoods.com/' target='_blank' className='app'>

@@ -11,16 +11,13 @@ class Team extends React.Component {
 
   render() {
     const t = this.props.t;
-    const user = this.props.user;
     return (
       <div id='page-wrapper'>
         {/* <!-- Wrapper --> */}
         <section id='wrapper'>
           <div className='wrapper team-wrapper'>
             <div className='inner'>
-              <h3 className='major'>
-                {t('Welcome')} {_.get(user, 'name')}
-              </h3>
+              <h3 className='major'>{t('Welcome')}</h3>
               <p>{t('OurTeam')}</p>
               <h3 className='major'>{t('MeetTheFounders')}</h3>
               <section className='features'>
@@ -52,55 +49,67 @@ class Team extends React.Component {
               <div className='coffee-text'>{t('Coffee')}</div>
             </h2>
 
-            <form method='post' action='https://formspree.io/montreact@gmail.com'>
-              <div className='fields'>
-                <div className='field'>
-                  <label htmlFor='name'>Name</label>
-                  <input type='text' name='name' id='name' />
+            <div className='inner'>
+              <h2 className='major'>
+                <AnimatedCoffee />
+                <br></br>
+                <div className='coffee-text'>{t('Coffee')}</div>
+              </h2>
+
+              <form method='post' action='https://formspree.io/montreact@gmail.com'>
+                <div className='fields'>
+                  <div className='field'>
+                    <label htmlFor='name'>{t('Name')}</label>
+                    <input type='text' name='name' id='name' />
+                  </div>
+                  <div className='field'>
+                    <label htmlFor='email'>{t('Email')}</label>
+                    <input type='email' name='email' id='email' />
+                  </div>
+                  <div className='field'>
+                    <label htmlFor='message'>{t('Message')}</label>
+                    <textarea name='message' id='message' rows='4'></textarea>
+                  </div>
                 </div>
-                <div className='field'>
-                  <label htmlFor='email'>Email</label>
-                  <input type='email' name='email' id='email' />
-                </div>
-                <div className='field'>
-                  <label htmlFor='message'>Message</label>
-                  <textarea name='message' id='message' rows='4'></textarea>
-                </div>
-              </div>
-              <ul className='actions'>
-                <li>
-                  <input type='submit' value='Send Message' />
+                <ul className='actions'>
+                  <li>
+                    <input type='submit' value={t('Send')} />
+                  </li>
+                </ul>
+              </form>
+              <ul className='contact'>
+                <li className='btn-purple'>
+                  <a href='https://www.instagram.com/montreact/?hl=en'>
+                    <i className='fa fa-instagram' />
+                    Instagram
+                  </a>
+                </li>
+                <li className='btn-purple'>
+                  <a href='https://www.facebook.com/Montreact'>
+                    <i className='fa fa-facebook' />
+                    Facebook
+                  </a>
+                </li>
+                <li className='btn-purple'>
+                  <a href='https://ca.linkedin.com/company/montreact'>
+                    <i className='fa fa-linkedin' />
+                    LinkedIn
+                  </a>
+                </li>
+                <li className='btn-purple'>
+                  <a href='mailto:montreact@gmail.com'>
+                    <i className='fa fa-envelope' />
+                    Email
+                  </a>
                 </li>
               </ul>
-            </form>
-
-            <ul className='contact'>
-              <li className='btn-purple'>
-                <a href='mailto:montreact@gmail.com'>
-                  <i className='fa fa-envelope' />
-                  montreact@gmail.com
-                </a>
-              </li>
-              <li className='btn-purple'>
-                <a href='https://ca.linkedin.com/company/montreact'>
-                  <i className='fa fa-linkedin' />
-                  LinkedIn
-                </a>
-              </li>
-              <li className='btn-purple'>
-                <a href='https://www.facebook.com/Montreact'>
-                  <i className='fa fa-facebook' />
-                  Facebook
-                </a>
-              </li>
-            </ul>
-
-            <ul className='copyright'>
-              <li>&copy; Montreact</li>
-              <li>
-                Design: <a href='http://html5up.net'>HTML5 UP</a>
-              </li>
-            </ul>
+              <ul className='copyright'>
+                <li>&copy; Montreact</li>
+                <li>
+                  Design: <a href='http://html5up.net'>HTML5 UP</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
       </div>

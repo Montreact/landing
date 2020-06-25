@@ -6,84 +6,87 @@
 
 /* Header */
 
-	#header {
-		@include vendor('transition', 'background-color #{_duration(transition)} ease-in-out');
-		background-color: transparentize(desaturate(lighten(_palette(bg), 3), 1.5), 0.05);
-		height: 3.5em;
-		left: 0;
-		line-height: 3.5em;
-		padding: 0 1.25em;
-		position: fixed;
-		top: 0;
-		width: 100%;
-		z-index: _misc(z-index-base);
+#header {
+  @include vendor('transition', 'background-color #{_duration(transition)} ease-in-out');
+  background-color: transparentize(desaturate(lighten(_palette(bg), 3), 1.5), 0.05);
+  height: 3.5em;
+  left: 0;
+  line-height: 3.5em;
+  padding: 0 1.25em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: _misc(z-index-base);
 
-		h1 {
-			@include vendor('transition', (
-				'opacity #{_duration(transition)} ease-in-out',
-				'visibility #{_duration(transition)}'
-			));
-			border-bottom: 0;
-			font-size: 0.8em;
-			margin-bottom: 0;
-			opacity: 1;
-			visibility: visible;
+  h1 {
+    @include vendor('transition', ('opacity #{_duration(transition)} ease-in-out', 'visibility #{_duration(transition)}'));
+    border-bottom: 0;
+    font-size: 0.8em;
+    margin-bottom: 0;
+    opacity: 1;
+    visibility: visible;
 
-			a {
-				border: 0;
-			}
-		}
+    a {
+      border: 0;
+    }
+  }
 
-		nav {
-			font-family: _font(family-heading);
-			font-size: 0.8em;
-			font-weight: _font(weight-heading-bold);
-			height: 3em;
-			letter-spacing: _font(kern-heading);
-			line-height: 3em;
-			position: absolute;
-			right: 0.7em;
-			text-transform: uppercase;
-			top: 0.7em;
+  nav {
+    font-family: _font(family-heading);
+    font-size: 0.8em;
+    font-weight: _font(weight-heading-bold);
+    height: 3em;
+    letter-spacing: _font(kern-heading);
+    line-height: 3em;
+    position: absolute;
+    right: 0.7em;
+    text-transform: uppercase;
+    top: 0.7em;
 
-			a {
-				border: 0;
-				display: inline-block;
-				padding: 0 1em;
-				display: flex;
-				justify-content: right;
-				cursor: pointer;
+    a {
+      border: 0;
+      display: inline-block;
+      padding: 0 1em;
+      display: flex;
+      justify-content: right;
+      cursor: pointer;
 
-				&:before {
-					float: right;
-					margin-left: 0.75em;
-				}
-			}
-		}
+      &:before {
+        float: right;
+        margin-left: 0.75em;
+      }
+    }
+  }
 
-		&.alt {
-			background-color: transparent;
+  &.alt {
+    background-color: transparent;
 
-			h1 {
-				opacity: 0;
-				visibility: hidden;
-			}
-		}
+    h1 {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
 
-		@include breakpoint('<=small') {
-			height: 2.75em;
-			line-height: 2.75em;
+  @include breakpoint('<=small') {
+    height: 2.75em;
+    line-height: 2.75em;
 
-			nav {
-				top: 0;
-				height: inherit;
-				line-height: inherit;
+    nav {
+      top: 0;
+      height: inherit;
+      line-height: inherit;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      position: relative;
+      right: 0px;
 
-				a {
-					height: inherit;
-					line-height: inherit;
-				}
-			}
-		}
-
-	}
+      a {
+        height: inherit;
+        line-height: inherit;
+        margin: 0px;
+        padding: 0px;
+      }
+    }
+  }
+}

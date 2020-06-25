@@ -5,7 +5,6 @@ import LogoTitle from '../images/logo_title.png';
 import Tippy from '@tippy.js/react';
 import LineItem from './shopify/LineItem';
 import 'tippy.js/dist/tippy.css';
-var _ = require('lodash');
 import store from '../store';
 
 class Nav extends React.Component {
@@ -63,7 +62,7 @@ class Nav extends React.Component {
       );
     });
     return (
-      <header id='header' className='nav-bar animated fadeInDown delay-1s'>
+      <header id='header' className='nav-bar animated fadeInDown delay-05s'>
         <a className='nav-title-container' href='#'>
           <img alt='logo-title' className='nav-title' src={LogoTitle} />
         </a>
@@ -122,10 +121,11 @@ class Nav extends React.Component {
           )}
 
           <a href='mailto:montreact@gmail.com'>{t('letsTalk')}</a>
+          <a href='#plans'>Plans</a>
           <a onClick={() => this.onLocaleToggle(localeToggle)} onKeyDown={() => this.onLocaleToggle(localeToggle)}>
             {localeToggle}
           </a>
-          {_.isEmpty(user) ? (
+          {!user ? (
             <a onClick={() => this.props.login()}>{t('Login')}</a>
           ) : (
             <Tippy
@@ -144,7 +144,9 @@ class Nav extends React.Component {
                 </div>
               }
             >
-              <img src={_.get(user, 'picture.data.url')} alt=''></img>
+              {user && user.picture && user.picture.data && user.picture.data.url && (
+                <img src={user.picture.data.url} alt=''></img>
+              )}
             </Tippy>
           )}
         </nav>
