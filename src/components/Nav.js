@@ -17,10 +17,11 @@ class Nav extends React.Component {
     this.handleCartClose = this.handleCartClose.bind(this);
   }
 
-  onLocaleToggle = locale => {
+  onLocaleToggle() {
+    const locale = i18n.language === 'en' ? 'fr' : 'en';
     i18n.changeLanguage(locale);
     this.forceUpdate();
-  };
+  }
 
   updateQuantityInCart(lineItemId, quantity) {
     const state = store.getState(); // state from redux store
@@ -45,7 +46,7 @@ class Nav extends React.Component {
   }
 
   render() {
-    const localeToggle = i18n.language === 'en' ? 'fr' : 'en';
+    const localeToggle = i18n.language === 'en' ? 'French' : 'English';
     const t = this.props.t;
     const user = this.props.user;
 
@@ -122,10 +123,10 @@ class Nav extends React.Component {
 
           <a href='mailto:montreact@gmail.com'>{t('letsTalk')}</a>
           <a href='#plans'>Plans</a>
-          <a onClick={() => this.onLocaleToggle(localeToggle)} onKeyDown={() => this.onLocaleToggle(localeToggle)}>
+          <a onClick={() => this.onLocaleToggle()} onKeyDown={() => this.onLocaleToggle()}>
             {localeToggle}
           </a>
-          {!user ? (
+          {/* {!user ? (
             <a onClick={() => this.props.login()}>{t('Login')}</a>
           ) : (
             <Tippy
@@ -148,7 +149,7 @@ class Nav extends React.Component {
                 <img src={user.picture.data.url} alt=''></img>
               )}
             </Tippy>
-          )}
+          )} */}
         </nav>
       </header>
     );

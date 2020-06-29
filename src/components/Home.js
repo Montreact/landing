@@ -53,7 +53,7 @@ class HomePage extends React.Component {
           <div className='inner banner-container'>
             <span className='logo-container animated jello-hover'>
               <img alt='logo-half' className='logo-half animated fadeInUp delay-1s' src={LogoLeft} />
-              <img alt='logo-half' className='logo-half animated fadeInUp delay-05s' src={LogoRight} />
+              <img alt='logo-half' className='logo-half animated fadeInUp delay-2s' src={LogoRight} />
             </span>
 
             <span className='animated fadeIn'>

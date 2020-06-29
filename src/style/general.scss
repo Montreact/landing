@@ -158,10 +158,11 @@ a {
 }
 
 .plans {
+  display: flex !important;
   justify-content: space-around;
-  min-width: 850px;
   h3 {
     text-align: center;
+    border-bottom: 0px !important;
   }
   article {
     display: flex;
@@ -169,9 +170,30 @@ a {
     padding: 1.25em !important;
     margin: 5px !important;
     max-width: 280px !important;
+    min-width: 250px !important;
+    width: calc(33% - 1.5em) !important;
   }
   .button {
     margin-top: auto;
+  }
+  td {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .plans {
+    article {
+      margin: 0px !important;
+    }
+  }
+}
+
+@media (min-width: 1680px) {
+  .plans {
+    article {
+      max-width: none !important;
+    }
   }
 }
 
@@ -294,4 +316,35 @@ a {
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
 }
