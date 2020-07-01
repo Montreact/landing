@@ -49,7 +49,6 @@ class Nav extends React.Component {
     const localeToggle = i18n.language === 'en' ? 'French' : 'English';
     const t = this.props.t;
     const user = this.props.user;
-
     const state = store.getState();
 
     let line_items = state.checkout.lineItems.map(line_item => {
@@ -106,9 +105,9 @@ class Nav extends React.Component {
                       </div>
                     </div>
                     <center>
-                      <button className='Cart__checkout button' onClick={this.openCheckout}>
+                      <a href={state.checkout.webUrl} className='btn-purple'>
                         Checkout
-                      </button>
+                      </a>
                     </center>
                   </footer>
                 </div>
@@ -126,30 +125,6 @@ class Nav extends React.Component {
           <a onClick={() => this.onLocaleToggle()} onKeyDown={() => this.onLocaleToggle()}>
             {localeToggle}
           </a>
-          {/* {!user ? (
-            <a onClick={() => this.props.login()}>{t('Login')}</a>
-          ) : (
-            <Tippy
-              className='user-dropdown-container'
-              boundary='window'
-              placement='bottom-start'
-              trigger='click'
-              interactive
-              arrow={false}
-              content={
-                <div className='user-dropdown'>
-                  <a href='#store'>Store</a>
-                  <a href='https://fb.com/book/Montreact/'>Appointment</a>
-                  <a href='#team'>Our Team</a>
-                  <a onClick={this.props.logout}>Logout</a>
-                </div>
-              }
-            >
-              {user && user.picture && user.picture.data && user.picture.data.url && (
-                <img src={user.picture.data.url} alt=''></img>
-              )}
-            </Tippy>
-          )} */}
         </nav>
       </header>
     );

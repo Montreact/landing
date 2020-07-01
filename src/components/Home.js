@@ -53,7 +53,7 @@ class HomePage extends React.Component {
           <div className='inner banner-container'>
             <span className='logo-container animated jello-hover'>
               <img alt='logo-half' className='logo-half animated fadeInUp delay-1s' src={LogoLeft} />
-              <img alt='logo-half' className='logo-half animated fadeInUp delay-2s' src={LogoRight} />
+              <img alt='logo-half' className='logo-half animated fadeInUp delay-05s' src={LogoRight} />
             </span>
 
             <span className='animated fadeIn'>
@@ -165,12 +165,27 @@ class HomePage extends React.Component {
               <div className='app-section'>
                 <a href='https://itunes.apple.com/ca/app/gorendezvous/id1353526648?mt=8' target='_blank' className='app'>
                   <img src={pic07} alt='GOrendezvous mobile app' />
-                  <span>GOrendezvous (iOS)</span>
+                  <span>GOrendezvous (iOS/Android)</span>
                 </a>
 
-                <a href='https://www.sanitizedpro.com/' target='_blank' className='app'>
-                  <img src={pic15} alt='COVID-19' />
-                  <span>Sanitized Pro</span>
+                <a
+                  href='https://www.instagram.com/stories/montreact/2335863921305335297/?hl=en'
+                  target='_blank'
+                  className='app'
+                  onClick={() => this.setState({ displayVideo: !this.state.displayVideo })}
+                >
+                  <img src={pic21} alt='Covid-19 Screening' />
+                  <span>Covid-19 Screening (iOS/Android)</span>
+                </a>
+
+                <a href='https://developer.cerence.com/#/login' target='_blank' className='app'>
+                  <img src={pic11} alt='Speech and natural language tools' />
+                  <span>Nuance Mix</span>
+                </a>
+
+                <a href='http://www.ambitionfunds.org/' target='_blank' className='app'>
+                  <img src={pic10} alt='Mutual Fund' />
+                  <span>Ambition Funds</span>
                 </a>
 
                 <a href='https://www.lesroisdesinfectants.ca' target='_blank' className='app'>
@@ -183,14 +198,9 @@ class HomePage extends React.Component {
                   <span>Medvie</span>
                 </a>
 
-                <a href='https://developer.cerence.com/#/login' target='_blank' className='app'>
-                  <img src={pic11} alt='Speech and natural language tools' />
-                  <span>Nuance Mix</span>
-                </a>
-
-                <a href='http://www.ambitionfunds.org/' target='_blank' className='app'>
-                  <img src={pic10} alt='Mutual Fund' />
-                  <span>Ambition Funds</span>
+                <a href='https://www.sanitizedpro.com/' target='_blank' className='app'>
+                  <img src={pic15} alt='COVID-19' />
+                  <span>Sanitized Pro</span>
                 </a>
 
                 <a href='https://biscottidiana.ca/' target='_blank' className='app'>
@@ -206,16 +216,6 @@ class HomePage extends React.Component {
                 <a href='https://alexviapiano.github.io/CondosCiteAvenirLaval/' target='_blank' className='app'>
                   <img src={pic02} alt='Condo' />
                   <span>Condo Cite Avenir</span>
-                </a>
-
-                <a
-                  href='https://www.instagram.com/stories/montreact/2335863921305335297/?hl=en'
-                  target='_blank'
-                  className='app'
-                  onClick={() => this.setState({ displayVideo: !this.state.displayVideo })}
-                >
-                  <img src={pic21} alt='Covid-19 Screening' />
-                  <span>Covid-19 Screening (iOS/Android)</span>
                 </a>
 
                 <a href='http://www.glutenafoods.com/' target='_blank' className='app'>
@@ -248,15 +248,6 @@ class HomePage extends React.Component {
                     <a href='http://www.greenroomchannel.com' target='_blank' className='app animated fadeIn '>
                       <img src={pic03} alt='Stock Trading' />
                       <span>The Green Room</span>
-                    </a>
-
-                    <a
-                      href='https://play.google.com/store/apps/details?id=com.gorendezvous.mobile'
-                      target='_blank'
-                      className='app animated fadeIn '
-                    >
-                      <img src={pic08} alt='GOrodenzvous mobile app' />
-                      <span>GOrendezvous (Android)</span>
                     </a>
 
                     <a href='https://www.omfconstruction.com/' target='_blank' className='app animated fadeIn '>

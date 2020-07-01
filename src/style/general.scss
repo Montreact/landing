@@ -32,24 +32,6 @@ a {
       }
     }
   }
-  .cart-container {
-    border: 1px solid #fff;
-    .cart {
-      padding: 5px;
-      ul {
-        padding: 0px;
-        li {
-          list-style: none;
-          display: flex;
-          .cart-item-remove {
-            padding-right: 10px;
-            color: red;
-            cursor: pointer;
-          }
-        }
-      }
-    }
-  }
   nav {
     display: flex;
     align-items: center;
@@ -213,6 +195,92 @@ a {
     .dangerousHTML {
       p {
         margin: 0px;
+      }
+    }
+  }
+
+  .Product-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    .Product {
+      margin: 20px;
+      padding: 40px;
+      max-width: 275px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #353849;
+      border-radius: 5px;
+
+      .Product__title {
+        text-align: center;
+      }
+    }
+    img {
+      border-radius: 10px;
+      max-width: 200px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .Product {
+    max-width: 300px !important;
+    max-height: 550px !important;
+    height: 550px !important;
+  }
+}
+
+.cart-container {
+  background: linear-gradient(135deg, #3414be 0%, #7158dc99 100%);
+  max-height: 500px;
+  overflow: auto;
+  border: 2px solid rgba(255, 255, 255, 0.125);
+  .Cart {
+    ul {
+      list-style: none;
+      min-width: 250px;
+      margin: 0px;
+      padding: 0px;
+      li {
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .Line-item {
+      img {
+        max-height: 100px;
+      }
+      background: linear-gradient(135deg, #0a0038 0%, #7158dc99 100%);
+    }
+    .Cart-info {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    .Line-item__content-row {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      button {
+        padding: 0 1em;
+        align-items: center;
+        transition: background-color 0.2s ease-in-out;
+        border-radius: 5px;
+        box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.125);
+        margin-right: 5px;
+        margin-left: 5px;
+        max-height: 30px;
+        font-size: 15px;
       }
     }
   }

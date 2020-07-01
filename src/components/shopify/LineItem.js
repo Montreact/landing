@@ -32,6 +32,9 @@ class LineItem extends Component {
                 <img src={this.props.line_item.variant.image.src} alt={`${this.props.line_item.title} product shot`} />
               ) : null}
             </div>
+            <span className='Line-item__price'>
+              $ {(this.props.line_item.quantity * this.props.line_item.variant.price).toFixed(2)}
+            </span>
           </div>
           <div className='Line-item__content-row'>
             <div className='Line-item__quantity-container'>
@@ -42,13 +45,10 @@ class LineItem extends Component {
               <button className='Line-item__quantity-update' onClick={() => this.incrementQuantity(this.props.line_item.id)}>
                 +
               </button>
+              <button className='Line-item__remove' onClick={() => this.props.removeLineItemInCart(this.props.line_item.id)}>
+                ×
+              </button>
             </div>
-            <span className='Line-item__price'>
-              $ {(this.props.line_item.quantity * this.props.line_item.variant.price).toFixed(2)}
-            </span>
-            <button className='Line-item__remove' onClick={() => this.props.removeLineItemInCart(this.props.line_item.id)}>
-              ×
-            </button>
           </div>
         </div>
       </li>

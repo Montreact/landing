@@ -18,7 +18,7 @@ class Team extends React.Component {
               <h3 className='major' style={{ textAlign: 'center' }}>
                 Choose the plan that’s right for your business!
               </h3>
-              <section className='features plans'>
+              <section className='features plans animated fadeIn delay-1s'>
                 <article>
                   <h3 className='major'>Business Landing Page</h3>
                   <table className='alt'>

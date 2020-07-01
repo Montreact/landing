@@ -2,6 +2,7 @@
 const initState = {
   isCartOpen: false,
   checkout: { lineItems: [] },
+  checkoutId: null,
   products: [],
   shop: {},
 };
@@ -25,7 +26,7 @@ export default (state = initState, action) => {
     case PRODUCTS_FOUND:
       return { ...state, products: action.payload };
     case CHECKOUT_FOUND:
-      return { ...state, checkout: action.payload };
+      return { ...state, checkout: action.payload, checkoutId: action.payload.id };
     case SHOP_FOUND:
       return { ...state, shop: action.payload };
     case ADD_VARIANT_TO_CART:
