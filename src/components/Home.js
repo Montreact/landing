@@ -34,6 +34,7 @@ import pic18 from '../images/apps/pic18.jpg';
 import pic19 from '../images/apps/pic19.jpg';
 import pic20 from '../images/apps/pic20.jpg';
 import pic21 from '../images/apps/pic21.jpg';
+import pic22 from '../images/apps/pic22.jpg';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -265,10 +266,15 @@ class HomePage extends React.Component {
                       <span>LUVI</span>
                     </a>
 
-                    <a href='https://alexviapiano.github.io/Boxing/' target='_blank' className='app'>
+                    <a href='https://alexviapiano.github.io/ParkDev/' target='_blank' className='app'>
+                      <img src={pic22} alt='Boxing' />
+                      <span>Park Dev</span>
+                    </a>
+
+                    {/* <a href='https://alexviapiano.github.io/Boxing/' target='_blank' className='app'>
                       <img src={pic17} alt='Boxing' />
                       <span>Ludus Boxing</span>
-                    </a>
+                    </a> */}
                   </React.Fragment>
                 )}
               </div>
