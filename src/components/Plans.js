@@ -24,22 +24,22 @@ class Team extends React.Component {
                   <table className='alt'>
                     <tbody>
                       <tr>
-                        <td>Web hosting</td>
-                      </tr>
-                      <tr>
-                        <td>Developed using HTML, CSS, Javascript</td>
-                      </tr>
-                      <tr>
-                        <td>Custom email domains & email forms</td>
-                      </tr>
-                      <tr>
-                        <td>Responsive web design</td>
+                        <td>Responsive Web Design</td>
                       </tr>
                       <tr>
                         <td>Custom user friendly layouts</td>
                       </tr>
                       <tr>
-                        <td>Facebook messenger live chat</td>
+                        <td>Web hosting & domain setup</td>
+                      </tr>
+                      <tr>
+                        <td>Email domain setup + email website forms</td>
+                      </tr>
+                      <tr>
+                        <td>Facebook Pages & Intagram Business Setup</td>
+                      </tr>
+                      <tr>
+                        <td>Website live chat integration w/ Facebook</td>
                       </tr>
                     </tbody>
                   </table>
@@ -52,25 +52,32 @@ class Team extends React.Component {
                   <table className='alt'>
                     <tbody>
                       <tr>
-                        <td>Web hosting</td>
+                        <td>
+                          <b>Shopify - E-commerce Website Integration</b>
+                        </td>
                       </tr>
                       <tr>
-                        <td>Developed using HTML, CSS, Javascript</td>
+                        <td>
+                          <b>Shopify - Facebook & Intagram Integration</b>
+                        </td>
                       </tr>
                       <tr>
-                        <td>Custom email domains & email forms</td>
-                      </tr>
-                      <tr>
-                        <td>Responsive web design</td>
+                        <td>Responsive Web Design</td>
                       </tr>
                       <tr>
                         <td>Custom user friendly layouts</td>
                       </tr>
                       <tr>
-                        <td>Facebook messenger live chat</td>
+                        <td>Web hosting & domain setup</td>
                       </tr>
                       <tr>
-                        <td>Shopify integrated e-commerce page</td>
+                        <td>Email domain setup + email website forms</td>
+                      </tr>
+                      <tr>
+                        <td>Facebook Pages & Intagram Business Setup</td>
+                      </tr>
+                      <tr>
+                        <td>Website live chat integration w/ Facebook</td>
                       </tr>
                     </tbody>
                   </table>
@@ -84,25 +91,39 @@ class Team extends React.Component {
                     <table className='alt'>
                       <tbody>
                         <tr>
-                          <td>Web hosting</td>
+                          <td>
+                            <b>React.js - Web Applications</b>
+                          </td>
                         </tr>
                         <tr>
-                          <td>Web apps developed using React.js</td>
+                          <td>
+                            <b>
+                              React Native - Mobile Apps <i>(iOS & Android)</i>
+                            </b>
+                          </td>
                         </tr>
                         <tr>
-                          <td>Mobile apps (IOS, android) developed using React Native and Expo</td>
+                          <td>
+                            <b>Shopify - Custom React.js web stores</b>
+                          </td>
                         </tr>
                         <tr>
-                          <td>Facebook authentication</td>
+                          <td>Responsive Web Design</td>
                         </tr>
                         <tr>
-                          <td>SASS (Systically Awesome Style Sheets)</td>
+                          <td>Custom user friendly layouts</td>
                         </tr>
                         <tr>
-                          <td>Headless CMS using Strapi</td>
+                          <td>Web hosting & domain setup</td>
                         </tr>
                         <tr>
-                          <td>Custom React.js web apps integrated with Shopify</td>
+                          <td>Email domain setup + email website forms</td>
+                        </tr>
+                        <tr>
+                          <td>Facebook Pages & Intagram Business Setup</td>
+                        </tr>
+                        <tr>
+                          <td>Website live chat integration w/ Facebook</td>
                         </tr>
                       </tbody>
                     </table>

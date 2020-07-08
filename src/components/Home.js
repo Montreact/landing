@@ -181,7 +181,9 @@ class HomePage extends React.Component {
 
                 <a href='https://developer.cerence.com/#/login' target='_blank' className='app'>
                   <img src={pic11} alt='Speech and natural language tools' />
-                  <span>Nuance Mix</span>
+                  <span>
+                    Nuance - <br></br>Custom voice driven AI
+                  </span>
                 </a>
 
                 <a href='http://www.ambitionfunds.org/' target='_blank' className='app'>
@@ -191,12 +193,12 @@ class HomePage extends React.Component {
 
                 <a href='https://www.lesroisdesinfectants.ca' target='_blank' className='app'>
                   <img src={pic19} alt='Disinfectant and Cleaning' />
-                  <span>Les Rois Des Infectants</span>
+                  <span>Les Rois Desinfectants</span>
                 </a>
 
                 <a href='https://www.medvie.ca/' target='_blank' className='app'>
                   <img src={pic20} alt='Medical Equipement Distributor' />
-                  <span>Medvie</span>
+                  <span>Medvie Distribution</span>
                 </a>
 
                 <a href='https://www.sanitizedpro.com/' target='_blank' className='app'>
@@ -226,19 +228,19 @@ class HomePage extends React.Component {
 
                 <a href='https://www.apluspaintandvarnish.ca' target='_blank' className='app'>
                   <img src={pic12} alt='Painting' />
-                  <span>A Plus</span>
+                  <span>A Plus Paint And Varnish</span>
                 </a>
 
                 {this.state.displayMoreApps && (
                   <React.Fragment>
                     <a href='https://nitebite.herokuapp.com/' target='_blank' className='app animated fadeIn '>
                       <img src={pic09} alt='Snack Finder' />
-                      <span>Nite Bites</span>
+                      <span>Nite Bites </span>
                     </a>
 
                     <a href='http://www.emtex.ca/' target='_blank' className='app animated fadeIn '>
                       <img src={pic04} alt='Textiles' />
-                      <span>Emtex</span>
+                      <span>Emtex Inc.</span>
                     </a>
 
                     <a href='http://lbfinancialgroup.ca/' target='_blank' className='app animated fadeIn '>
@@ -248,7 +250,7 @@ class HomePage extends React.Component {
 
                     <a href='http://www.greenroomchannel.com' target='_blank' className='app animated fadeIn '>
                       <img src={pic03} alt='Stock Trading' />
-                      <span>The Green Room</span>
+                      <span>The Green Room (Stock Trading Community)</span>
                     </a>
 
                     <a href='https://www.omfconstruction.com/' target='_blank' className='app animated fadeIn '>
@@ -258,17 +260,17 @@ class HomePage extends React.Component {
 
                     <a href='https://www.legroupedambrosio.com/' target='_blank' className='app animated fadeIn '>
                       <img src={pic14} alt='Landscaping' />
-                      <span>Le Groupe Dambrosio</span>
+                      <span>Le Groupe Dambrosio Contruction</span>
                     </a>
 
                     <a href='https://www.luvi.ca' target='_blank' className='app animated fadeIn'>
                       <img src={pic05} alt='Hair Stylist' />
-                      <span>LUVI</span>
+                      <span>LUVI Hair Salon</span>
                     </a>
 
-                    <a href='https://alexviapiano.github.io/ParkDev/' target='_blank' className='app'>
-                      <img src={pic22} alt='Boxing' />
-                      <span>Park Dev</span>
+                    <a href='https://www.parkdev.ca' target='_blank' className='app'>
+                      <img src={pic22} alt='Park Dev Consutrction' />
+                      <span>Park Dev Construction</span>
                     </a>
 
                     {/* <a href='https://alexviapiano.github.io/Boxing/' target='_blank' className='app'>
